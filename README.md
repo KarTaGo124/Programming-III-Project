@@ -2,7 +2,7 @@
 
 ## Integrantes
 * Jose Guillermo Galvez Pacori
-* Nombre y Apellidos
+* Dylan Andres Cabezas Ramirez
 * Nombre y Apellidos
 * Nombre y Apellidos
 
