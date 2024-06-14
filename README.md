@@ -1,7 +1,7 @@
 # Programación III: Proyecto Final (2024-1)
 
 ## Integrantes
-* Nombre y Apellidos
+* Jose Guillermo Galvez Pacori
 * Nombre y Apellidos
 * Nombre y Apellidos
 * Nombre y Apellidos
