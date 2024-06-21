@@ -3,7 +3,7 @@
 ## Integrantes
 * Jose Guillermo Galvez Pacori
 * Dylan Andres Cabezas Ramirez
-* Nombre y Apellidos
+* Leonardo Alfredo Montoya Solórzano
 * Nombre y Apellidos
 
 El siguiente texto debe ser eliminar en su repositorio.
