@@ -1,19 +1,21 @@
 #include <iostream>
 #include <unordered_map>
-#include <set>
+#include <unordered_set>
 
 using namespace std;
 
 class NodoTrie {
   private:
     unordered_map<char, NodoTrie*> hijos;
-    set<string> peliculas;
+    unordered_set<int> imdb_ids; // Almacena set de ids
+    
   public:
+
     NodoTrie() = default;
-    ~NodoTrie(){
-      for (auto& [c, hijo] : hijos){
-          delete hijo;
-      }
+
+    void setHijo(const char& c, NodoTrie* nodo){
+      //Se crea un nodo y se le asigna el último char
+      hijos[c] = nodo;
     }
 
     NodoTrie* getHijo(char c){
@@ -22,16 +24,18 @@ class NodoTrie {
       return nullptr; // Caso contrario nullptr
     }
 
-    void setNodo(char c, NodoTrie* nodo){
-      hijos[c] = nodo;
+    void agregarPeliculaId(const int& imdb_id){
+      imdb_ids.insert(imdb_id);
     }
 
-    void agregarPelicula(const string& pelicula){
-      peliculas.insert(pelicula);
+    const unordered_set<int>& getIds() const {
+      return imdb_ids;
     }
 
-    const set<string>& getPeliculas() const {
-      return peliculas;
-
+    ~NodoTrie(){
+      for (auto& [c, hijo] : hijos){
+          delete hijo;
+      }
     }
+
 };

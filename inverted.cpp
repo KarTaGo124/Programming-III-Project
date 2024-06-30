@@ -1,7 +1,9 @@
 #include "nodo.cpp"
+#include "functions.cpp"
 
 #include <cctype>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
@@ -9,18 +11,19 @@ class InvertedTrie{
   private:
     NodoTrie* raiz;
 
-    void insertarString(const string& str,const string& pelicula){
-      for (size_t i = 0; i < str.length(); i++) {
+    void insertString(const string& str,const int& movieId){
+      string strNormalizado = normalizarTxt(str);
+      for (size_t i = 0; i < strNormalizado.length(); i++) {
        NodoTrie* nodo = raiz; // Crea nodo
-       for (size_t j = i; j < str.length(); j++) {
-         char c = tolower(str[j]); // asigan el valor de letra
-         NodoTrie* hijo = nodo->getHijo(c); // asigna el valor de hijo
-         if(!hijo){ // en le caso no exista char hijo
-           hijo = new NodoTrie(); // crea un nuevo nodo hijo
-           nodo->setNodo(c,hijo); // coloca el valor del último char en el nodo
+       for (size_t j = i; j < strNormalizado.length(); j++) {
+         char c = tolower(strNormalizado[j]); // asigan el valor de letra en minuscula
+         NodoTrie* hijo = nodo->getHijo(c); // si existe -> asigna el nodo de hijo o nullptr
+         if(!hijo){ // en el caso sea nullptr
+           hijo = new NodoTrie();
+           nodo->setHijo(c, hijo);
          }
          nodo = hijo; // nodo apunta al hijo
-         nodo->agregarPelicula(pelicula); // agrega pelicula en set de peliculas
+         nodo->agregarPeliculaId(movieId); // agrega id de película en el set para ese nodo
        }
       }
     }
@@ -28,20 +31,20 @@ class InvertedTrie{
   public:
     InvertedTrie(): raiz(new NodoTrie()){}
 
-    void insertar(const string& titulo, const string& sinopsis){
-      insertarString(titulo, titulo);
-      insertarString(sinopsis, titulo);
+    void insert(const string& titulo/*, const string& sinopsis*/, const int& id){
+      insertString(titulo, id);
+      //insertString(sinopsis, id);
     }
 
-    template<typename T> // Permite trabajar con la clase películas Pelicula y testear con strings
-    vector<T> buscarPorSubcadena(const string& subcadena){
+    unordered_set<int> buscarPorSubcadena(string subcadena){
+      string subNormalizado = normalizarTxt(subcadena);
       NodoTrie* nodo = raiz;
-      for(const char& c: subcadena){
+      for(const char& c: subNormalizado){
         nodo = nodo->getHijo(c);
         if(!nodo)
           return {};
       }
-      return vector<T>(nodo->getPeliculas().begin(),nodo->getPeliculas().end());
+      return unordered_set<int>(nodo->getIds().begin(),nodo->getIds().end());
     }
 
     ~InvertedTrie(){
