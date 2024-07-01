@@ -1,7 +1,21 @@
 #include<iostream>
 #include<unordered_map>
-
+#include <vector>
+#include <string>
 using namespace std;
+
+vector<string> generarSubcadenas(string input) {
+    vector<string> subcadenas;
+    subcadenas.push_back(input); // Agregamos la cadena completa al principio
+
+    size_t pos;
+    while ((pos = input.find_last_of(' ')) != string::npos) {
+        input = input.substr(0, pos); // Quitamos la última palabra
+        subcadenas.push_back(input); // Agregamos la nueva subcadena
+    }
+
+    return subcadenas;
+}
 
 string normalizarTxt(string str) {
     unordered_map<char, char> mapNormalizado = {
