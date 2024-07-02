@@ -4,7 +4,7 @@
 * Jose Guillermo Galvez Pacori
 * Dylan Andres Cabezas Ramirez
 * Leonardo Alfredo Montoya Solórzano
-* Nombre y Apellidos
+* Samuel Aaron Saquiray Delgado
 
 El siguiente texto debe ser eliminar en su repositorio.
 
