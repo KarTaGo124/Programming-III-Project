@@ -8,7 +8,7 @@ int main() {
 
     Streaming streaming;
 
-    string filename = "./data/data.csv";
+    string filename = "Proyecto-Progra-3/data/data.csv";
 
     cout << "Subiendo peliculas..." << endl;
     streaming.loadMovies(filename);
