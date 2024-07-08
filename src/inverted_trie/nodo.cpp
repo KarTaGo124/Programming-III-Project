@@ -7,7 +7,7 @@ using namespace std;
 class NodoTrie {
 private:
     unordered_map<char, NodoTrie *> hijos;
-    unordered_set<int> imdb_ids; // Almacena set de ids
+    unordered_set<int> imdb_ids; // Almecenar unordered_set de pairs
 
 public:
 
@@ -25,7 +25,7 @@ public:
     }
 
     void agregarPeliculaId(const int &imdb_id) {
-        imdb_ids.insert(imdb_id);
+        imdb_ids.insert(imdb_id); // Insertar pairs <count,id>
     }
 
     const unordered_set<int> &getIds() const {
