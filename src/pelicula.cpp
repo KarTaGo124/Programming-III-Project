@@ -1,7 +1,10 @@
+#include "functions.h"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <unordered_set>
+#include <unordered_map>
 
 using namespace std;
 
@@ -11,6 +14,8 @@ private:
     string titulo; // titulo de pelicula
     string sinopsis; // descripcion de pelicula
     unordered_set<string> categorias; // tipo de pelicula
+    unordered_map<string, int> conteoPalabrasTitulo;
+    unordered_map<string, int> conteoPalabraSinopsis;
 
     static unordered_set<string> convertSet(const string &txt) {
         unordered_set<string> result;
@@ -25,6 +30,16 @@ private:
         return result;
     }
 
+    static unordered_map<string, int> countWords(string txt){
+      unordered_map<string, int> wordCount;
+      string lowerTxt = toLower(txt);
+      string temp;
+      istringstream ss(lowerTxt);
+      while(ss >> temp){ 
+        wordCount[temp]++;
+      }
+      return wordCount;
+    }
 
     static string getNextField(stringstream &ss, bool &inQuotes) {
         string field;
@@ -45,7 +60,10 @@ public:
     Pelicula() {}
 
     Pelicula(int imdb_id, const string &titulo, const string &sinopsis, const unordered_set<string> &categorias)
-            : imdb_id(imdb_id), titulo(titulo), sinopsis(sinopsis), categorias(categorias) {}
+            : imdb_id(imdb_id), titulo(titulo), sinopsis(sinopsis), categorias(categorias) {
+              conteoPalabrasTitulo = countWords(titulo);
+              conteoPalabraSinopsis = countWords(sinopsis);
+            }
 
     string getTitulo() const {
         return titulo;
@@ -61,6 +79,14 @@ public:
 
     int getImdb_id() const {
         return imdb_id;
+    }
+
+    unordered_map<string, int> getConteoPalabrasTitulo() const{
+      return conteoPalabrasTitulo;
+    }
+
+    unordered_map<string, int> getConteoPalabrasSinopsis() const{
+      return conteoPalabraSinopsis;
     }
 
     static Pelicula readCSVLine(ifstream &file, const string &line, int &current_id) {
