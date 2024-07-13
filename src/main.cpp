@@ -6,9 +6,11 @@ using namespace std;
 
 int main() {
 
+
     Streaming streaming;
 
-    string filename = "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/data/data.csv";
+    string filename = "Proyecto-Progra-3/data/data.csv";
+
 
     cout << "Subiendo peliculas..." << endl;
     streaming.loadMovies(filename);
