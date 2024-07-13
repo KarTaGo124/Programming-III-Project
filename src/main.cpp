@@ -11,20 +11,10 @@ int main() {
 
     string filename = "Proyecto-Progra-3/data/data.csv";
 
+    streaming.systemOn();
+        //Mostrar Id's
 
-    cout << "Subiendo peliculas..." << endl;
-    streaming.loadMovies(filename);
-    cout << "Carga terminada" << endl;
-
-
-    //Buscar por subcadenas
-    string subcadena;
-    cout << "Ingrese nombre de serie o película: ";
-    getline(cin, subcadena);
-    //Mostrar Id's
-
-    vector<pair<int,int>> idEncontrados = streaming.buscarPorSubcadena(subcadena);
-    //Imprimir datos de película
+        //Imprimir datos de película
 
 
     //Buscar por categorias
@@ -38,5 +28,6 @@ int main() {
 
     unordered_set<int> idEncontrados = streaming.buscarPorCategoria(tag);
     */
-    streaming.printEncontrados(idEncontrados);
+    
+    return 0;
 }

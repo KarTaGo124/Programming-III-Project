@@ -7,6 +7,8 @@
 #include <unordered_set>
 #include <sstream>
 #include <algorithm>
+#include <string>
+#include <unistd.h>
 
 using namespace std;
 
@@ -58,5 +60,51 @@ unordered_set<string> convertSet(const string &txt) {
         }
         return result;
     }
+/*
+string printContainer(unordered_set<string> container) {
+    string txt;
+    int sz = container.size() - 1;
+    for (auto it = container.begin(); it != container.end(); it++) {
+        txt += to_string(*it);
+        if (sz != 0) {
+            txt += ", ";
+            sz--;
+        }
+    }
+    return txt;
+}
+*/
+void clearTerminal(){
+  sleep(1);
+  system("clear");
+}
 
+bool ifExist(const unordered_set<int> ids, int id, int limit){
+  for (auto it = ids.begin(); it != ids.end() && limit > 0; ++it) {
+        if( *it == id) return true;
+        --limit;
+    }
+  return false;
+}
 
+int printMenu(){
+  int opcion;
+  do{
+    cout << "1. Buscar por nombre " << endl;
+    cout << "2. Buscar por categoría " << endl;
+    cout << "3. Explorar mi lista de películas y series " << endl;
+    cout << "Elegir entre las opciones: ";
+    cin >> opcion;
+    cin.ignore();
+  }while(opcion < 1 || opcion > 3);
+      
+  return opcion;
+}
+
+template<typename T1, typename T2>
+vector<pair<T1, T2>> sorted(const unordered_map<T1, T2> containerIn){
+  vector<pair<T1,T2>> containerOut(containerIn.begin(), containerIn.end());
+  sort(containerOut.begin(), containerOut.end(), [](const pair<T1, T2>& a, const pair<T1, T2>& b){return a.second > b.second;});
+
+  return containerOut;
+}
