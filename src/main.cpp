@@ -6,8 +6,10 @@ using namespace std;
 
 int main() {
 
+
     Streaming streaming;
 
+    string filename = "Proyecto-Progra-3/data/data.csv";
 
     streaming.systemOn();
         //Mostrar Id's
