@@ -936,6 +936,7 @@ CMakeFiles/src.dir/src/main.cpp.o: /home/leo/Documents/UTEC/Ciclos/3er_ciclo/Pro
   /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/istream \
+  /usr/include/c++/11/limits \
   /usr/include/c++/11/new \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/execution_defs.h \
@@ -1371,6 +1372,7 @@ CMakeFiles/src.dir/src/streaming.cpp.o: /home/leo/Documents/UTEC/Ciclos/3er_cicl
   /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/istream \
+  /usr/include/c++/11/limits \
   /usr/include/c++/11/new \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/execution_defs.h \
@@ -1493,6 +1495,8 @@ CMakeFiles/src.dir/src/streaming.cpp.o: /home/leo/Documents/UTEC/Ciclos/3er_cicl
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+/usr/include/c++/11/limits:
 
 /usr/include/c++/11/fstream:
 
