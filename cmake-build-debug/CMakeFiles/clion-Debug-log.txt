@@ -8,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.2s)
--- Generating done (0.0s)
+-- Configuring done (0.7s)
+-- Generating done (0.1s)
 -- Build files have been written to: C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/cmake-build-debug

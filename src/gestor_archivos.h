@@ -4,6 +4,8 @@
 #include <vector>
 #include "Login/cuentas.h"
 
+using namespace std;
+
 class GestorArchivos {
 private:
     static GestorArchivos* instancia;
@@ -11,8 +13,8 @@ private:
 
 public:
     static GestorArchivos* obtenerInstancia();
-    void guardarCuentas(const vector<Cuenta*>& cuentas);
-    void cargarCuentas(vector<Cuenta*>& cuentas);
+    static void guardarCuentas(const vector<Cuenta*>& cuentas);
+    static void cargarCuentas(vector<Cuenta*>& cuentas);
 };
 
 #endif // GESTOR_ARCHIVOS_H
