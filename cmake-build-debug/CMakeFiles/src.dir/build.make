@@ -96,33 +96,33 @@ CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\inverted_trie\nodo.cpp" -o CMakeFiles\src.dir\src\inverted_trie\nodo.cpp.s
 
-CMakeFiles/src.dir/src/Login/credenciales.cpp.obj: CMakeFiles/src.dir/flags.make
-CMakeFiles/src.dir/src/Login/credenciales.cpp.obj: C:/Users/Guillermo\ Galvez/OneDrive\ -\ UNIVERSIDAD\ DE\ INGENIERIA\ Y\ TECNOLOGIA/Escritorio/UTEC/2024-1/Progra\ 3/PROYECTO/Proyecto-Progra-3/src/Login/credenciales.cpp
-CMakeFiles/src.dir/src/Login/credenciales.cpp.obj: CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/src.dir/src/Login/credenciales.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/src.dir/src/Login/credenciales.cpp.obj -MF CMakeFiles\src.dir\src\Login\credenciales.cpp.obj.d -o CMakeFiles\src.dir\src\Login\credenciales.cpp.obj -c "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\Login\credenciales.cpp"
+CMakeFiles/src.dir/src/login/credenciales.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/src/login/credenciales.cpp.obj: C:/Users/Guillermo\ Galvez/OneDrive\ -\ UNIVERSIDAD\ DE\ INGENIERIA\ Y\ TECNOLOGIA/Escritorio/UTEC/2024-1/Progra\ 3/PROYECTO/Proyecto-Progra-3/src/login/credenciales.cpp
+CMakeFiles/src.dir/src/login/credenciales.cpp.obj: CMakeFiles/src.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/src.dir/src/login/credenciales.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/src.dir/src/login/credenciales.cpp.obj -MF CMakeFiles\src.dir\src\login\credenciales.cpp.obj.d -o CMakeFiles\src.dir\src\login\credenciales.cpp.obj -c "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\login\credenciales.cpp"
 
-CMakeFiles/src.dir/src/Login/credenciales.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/src.dir/src/Login/credenciales.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\Login\credenciales.cpp" > CMakeFiles\src.dir\src\Login\credenciales.cpp.i
+CMakeFiles/src.dir/src/login/credenciales.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/src.dir/src/login/credenciales.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\login\credenciales.cpp" > CMakeFiles\src.dir\src\login\credenciales.cpp.i
 
-CMakeFiles/src.dir/src/Login/credenciales.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/src.dir/src/Login/credenciales.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\Login\credenciales.cpp" -o CMakeFiles\src.dir\src\Login\credenciales.cpp.s
+CMakeFiles/src.dir/src/login/credenciales.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/src.dir/src/login/credenciales.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\login\credenciales.cpp" -o CMakeFiles\src.dir\src\login\credenciales.cpp.s
 
-CMakeFiles/src.dir/src/Login/cuentas.cpp.obj: CMakeFiles/src.dir/flags.make
-CMakeFiles/src.dir/src/Login/cuentas.cpp.obj: C:/Users/Guillermo\ Galvez/OneDrive\ -\ UNIVERSIDAD\ DE\ INGENIERIA\ Y\ TECNOLOGIA/Escritorio/UTEC/2024-1/Progra\ 3/PROYECTO/Proyecto-Progra-3/src/Login/cuentas.cpp
-CMakeFiles/src.dir/src/Login/cuentas.cpp.obj: CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/src.dir/src/Login/cuentas.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/src.dir/src/Login/cuentas.cpp.obj -MF CMakeFiles\src.dir\src\Login\cuentas.cpp.obj.d -o CMakeFiles\src.dir\src\Login\cuentas.cpp.obj -c "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\Login\cuentas.cpp"
+CMakeFiles/src.dir/src/login/cuentas.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/src/login/cuentas.cpp.obj: C:/Users/Guillermo\ Galvez/OneDrive\ -\ UNIVERSIDAD\ DE\ INGENIERIA\ Y\ TECNOLOGIA/Escritorio/UTEC/2024-1/Progra\ 3/PROYECTO/Proyecto-Progra-3/src/login/cuentas.cpp
+CMakeFiles/src.dir/src/login/cuentas.cpp.obj: CMakeFiles/src.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/src.dir/src/login/cuentas.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/src.dir/src/login/cuentas.cpp.obj -MF CMakeFiles\src.dir\src\login\cuentas.cpp.obj.d -o CMakeFiles\src.dir\src\login\cuentas.cpp.obj -c "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\login\cuentas.cpp"
 
-CMakeFiles/src.dir/src/Login/cuentas.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/src.dir/src/Login/cuentas.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\Login\cuentas.cpp" > CMakeFiles\src.dir\src\Login\cuentas.cpp.i
+CMakeFiles/src.dir/src/login/cuentas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/src.dir/src/login/cuentas.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\login\cuentas.cpp" > CMakeFiles\src.dir\src\login\cuentas.cpp.i
 
-CMakeFiles/src.dir/src/Login/cuentas.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/src.dir/src/Login/cuentas.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\Login\cuentas.cpp" -o CMakeFiles\src.dir\src\Login\cuentas.cpp.s
+CMakeFiles/src.dir/src/login/cuentas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/src.dir/src/login/cuentas.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\src\login\cuentas.cpp" -o CMakeFiles\src.dir\src\login\cuentas.cpp.s
 
 CMakeFiles/src.dir/src/functions.cpp.obj: CMakeFiles/src.dir/flags.make
 CMakeFiles/src.dir/src/functions.cpp.obj: C:/Users/Guillermo\ Galvez/OneDrive\ -\ UNIVERSIDAD\ DE\ INGENIERIA\ Y\ TECNOLOGIA/Escritorio/UTEC/2024-1/Progra\ 3/PROYECTO/Proyecto-Progra-3/src/functions.cpp
@@ -198,8 +198,8 @@ CMakeFiles/src.dir/src/gestor_archivos.cpp.s: cmake_force
 src_OBJECTS = \
 "CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.obj" \
 "CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.obj" \
-"CMakeFiles/src.dir/src/Login/credenciales.cpp.obj" \
-"CMakeFiles/src.dir/src/Login/cuentas.cpp.obj" \
+"CMakeFiles/src.dir/src/login/credenciales.cpp.obj" \
+"CMakeFiles/src.dir/src/login/cuentas.cpp.obj" \
 "CMakeFiles/src.dir/src/functions.cpp.obj" \
 "CMakeFiles/src.dir/src/main.cpp.obj" \
 "CMakeFiles/src.dir/src/pelicula.cpp.obj" \
@@ -211,8 +211,8 @@ src_EXTERNAL_OBJECTS =
 
 src.exe: CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.obj
 src.exe: CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.obj
-src.exe: CMakeFiles/src.dir/src/Login/credenciales.cpp.obj
-src.exe: CMakeFiles/src.dir/src/Login/cuentas.cpp.obj
+src.exe: CMakeFiles/src.dir/src/login/credenciales.cpp.obj
+src.exe: CMakeFiles/src.dir/src/login/cuentas.cpp.obj
 src.exe: CMakeFiles/src.dir/src/functions.cpp.obj
 src.exe: CMakeFiles/src.dir/src/main.cpp.obj
 src.exe: CMakeFiles/src.dir/src/pelicula.cpp.obj

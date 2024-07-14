@@ -84,18 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/Login/credenciales.cpp">
-			<Option target="src"/>
-		</Unit>
-		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/Login/credenciales.h">
-			<Option target="src"/>
-		</Unit>
-		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/Login/cuentas.cpp">
-			<Option target="src"/>
-		</Unit>
-		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/Login/cuentas.h">
-			<Option target="src"/>
-		</Unit>
 		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/functions.cpp">
 			<Option target="src"/>
 		</Unit>
@@ -112,6 +100,18 @@
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/inverted_trie/nodo.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/login/credenciales.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/login/credenciales.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/login/cuentas.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/login/cuentas.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/main.cpp">

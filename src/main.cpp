@@ -1,6 +1,6 @@
 #include "gestor_archivos.h"
-#include "Login/credenciales.h"
-#include "Login/cuentas.h"
+#include "login/credenciales.h"
+#include "login/cuentas.h"
 #include "streaming.cpp"
 
 #include <string>

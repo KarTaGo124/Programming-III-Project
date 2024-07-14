@@ -128,54 +128,6 @@ src/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/build
 .PHONY : src/fast
 
-src/Login/credenciales.obj: src/Login/credenciales.cpp.obj
-.PHONY : src/Login/credenciales.obj
-
-# target to build an object file
-src/Login/credenciales.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/Login/credenciales.cpp.obj
-.PHONY : src/Login/credenciales.cpp.obj
-
-src/Login/credenciales.i: src/Login/credenciales.cpp.i
-.PHONY : src/Login/credenciales.i
-
-# target to preprocess a source file
-src/Login/credenciales.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/Login/credenciales.cpp.i
-.PHONY : src/Login/credenciales.cpp.i
-
-src/Login/credenciales.s: src/Login/credenciales.cpp.s
-.PHONY : src/Login/credenciales.s
-
-# target to generate assembly for a file
-src/Login/credenciales.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/Login/credenciales.cpp.s
-.PHONY : src/Login/credenciales.cpp.s
-
-src/Login/cuentas.obj: src/Login/cuentas.cpp.obj
-.PHONY : src/Login/cuentas.obj
-
-# target to build an object file
-src/Login/cuentas.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/Login/cuentas.cpp.obj
-.PHONY : src/Login/cuentas.cpp.obj
-
-src/Login/cuentas.i: src/Login/cuentas.cpp.i
-.PHONY : src/Login/cuentas.i
-
-# target to preprocess a source file
-src/Login/cuentas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/Login/cuentas.cpp.i
-.PHONY : src/Login/cuentas.cpp.i
-
-src/Login/cuentas.s: src/Login/cuentas.cpp.s
-.PHONY : src/Login/cuentas.s
-
-# target to generate assembly for a file
-src/Login/cuentas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/Login/cuentas.cpp.s
-.PHONY : src/Login/cuentas.cpp.s
-
 src/functions.obj: src/functions.cpp.obj
 .PHONY : src/functions.obj
 
@@ -272,6 +224,54 @@ src/inverted_trie/nodo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.s
 .PHONY : src/inverted_trie/nodo.cpp.s
 
+src/login/credenciales.obj: src/login/credenciales.cpp.obj
+.PHONY : src/login/credenciales.obj
+
+# target to build an object file
+src/login/credenciales.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/login/credenciales.cpp.obj
+.PHONY : src/login/credenciales.cpp.obj
+
+src/login/credenciales.i: src/login/credenciales.cpp.i
+.PHONY : src/login/credenciales.i
+
+# target to preprocess a source file
+src/login/credenciales.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/login/credenciales.cpp.i
+.PHONY : src/login/credenciales.cpp.i
+
+src/login/credenciales.s: src/login/credenciales.cpp.s
+.PHONY : src/login/credenciales.s
+
+# target to generate assembly for a file
+src/login/credenciales.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/login/credenciales.cpp.s
+.PHONY : src/login/credenciales.cpp.s
+
+src/login/cuentas.obj: src/login/cuentas.cpp.obj
+.PHONY : src/login/cuentas.obj
+
+# target to build an object file
+src/login/cuentas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/login/cuentas.cpp.obj
+.PHONY : src/login/cuentas.cpp.obj
+
+src/login/cuentas.i: src/login/cuentas.cpp.i
+.PHONY : src/login/cuentas.i
+
+# target to preprocess a source file
+src/login/cuentas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/login/cuentas.cpp.i
+.PHONY : src/login/cuentas.cpp.i
+
+src/login/cuentas.s: src/login/cuentas.cpp.s
+.PHONY : src/login/cuentas.s
+
+# target to generate assembly for a file
+src/login/cuentas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/src/login/cuentas.cpp.s
+.PHONY : src/login/cuentas.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -353,12 +353,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... src
-	@echo ... src/Login/credenciales.obj
-	@echo ... src/Login/credenciales.i
-	@echo ... src/Login/credenciales.s
-	@echo ... src/Login/cuentas.obj
-	@echo ... src/Login/cuentas.i
-	@echo ... src/Login/cuentas.s
 	@echo ... src/functions.obj
 	@echo ... src/functions.i
 	@echo ... src/functions.s
@@ -371,6 +365,12 @@ help:
 	@echo ... src/inverted_trie/nodo.obj
 	@echo ... src/inverted_trie/nodo.i
 	@echo ... src/inverted_trie/nodo.s
+	@echo ... src/login/credenciales.obj
+	@echo ... src/login/credenciales.i
+	@echo ... src/login/credenciales.s
+	@echo ... src/login/cuentas.obj
+	@echo ... src/login/cuentas.i
+	@echo ... src/login/cuentas.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

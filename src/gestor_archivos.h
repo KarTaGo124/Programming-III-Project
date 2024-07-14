@@ -2,7 +2,7 @@
 #define GESTOR_ARCHIVOS_H
 
 #include <vector>
-#include "Login/cuentas.h"
+#include "login/cuentas.h"
 
 using namespace std;
 
