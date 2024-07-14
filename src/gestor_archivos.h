@@ -2,7 +2,6 @@
 #define GESTOR_ARCHIVOS_H
 
 #include "login/gestor_cuentas.h"
-#include <vector>
 
 class GestorArchivos {
 private:

@@ -87,17 +87,17 @@ void GestorArchivos::guardarCuentas(const GestorCuentas &cuentas) {
 
 void GestorArchivos::cargarCuentas(GestorCuentas &cuentas) {
     ifstream archivo("../archivos/cuentas.txt");
-    string correo, contrasenia, verMasTarde, likes;
     string line;
 
     while (getline(archivo, line)) {
         stringstream ss(line);
-        string temp;
+        string temp, correo, contrasenia;
         ss >> temp >> correo >> temp >> contrasenia;
 
         Cuenta *cuenta = new Cuenta(correo, contrasenia);
 
         // Leer ver más tarde
+        string verMasTarde;
         ss >> verMasTarde;
         if (verMasTarde.find("VerMasTarde:") == 0) {
             verMasTarde = verMasTarde.substr(12); // Remover "VerMasTarde:"
@@ -111,6 +111,7 @@ void GestorArchivos::cargarCuentas(GestorCuentas &cuentas) {
         }
 
         // Leer likes
+        string likes;
         ss >> likes;
         if (likes.find("Likes:") == 0) {
             likes = likes.substr(6); // Remover "Likes:"
@@ -127,6 +128,8 @@ void GestorArchivos::cargarCuentas(GestorCuentas &cuentas) {
         }
 
         cuentas.agregarCuenta(correo, contrasenia);
+        *cuentas.obtenerCuenta(correo) = *cuenta; // Copiar datos a la cuenta en gestor
+        delete cuenta; // Eliminar cuenta temporal
     }
     archivo.close();
 }

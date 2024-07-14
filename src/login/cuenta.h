@@ -33,7 +33,7 @@ public:
 
     void agregarLike(const string &tag);
 
-    void agregarVerAhora(string titulo);
+    void agregarVerAhora(const string &titulo);
 };
 
 #endif // CUENTA_H

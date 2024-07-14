@@ -78,6 +78,5 @@ int main() {
 
     menu(*cuentas, proxy);
 
-
     return 0;
 }

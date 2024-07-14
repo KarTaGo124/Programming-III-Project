@@ -89,16 +89,18 @@ public:
     }
 
     void printTags(int limit) {
+        int count = 0;
         for (const auto &tag : tagsMap) {
-            if (limit-- == 0) break;
+            if (count++ == limit) break;
             cout << tag.first << endl;
         }
     }
 
     void printTitulo(const unordered_set<int> &idPeliculas, int limit) {
         cout << "Se encontraron " << idPeliculas.size() << " películas para elegir: " << endl;
+        int count = 0;
         for (const auto &id : idPeliculas) {
-            if (limit-- == 0) break;
+            if (count++ == limit) break;
             cout << "ID: " << id << endl;
             cout << "Titulo: " << peliculas[id].getTitulo() << endl;
         }
@@ -107,7 +109,7 @@ public:
     void printEncontrados(const vector<pair<int, int>> &idEncontrados, int limit) {
         cout << "Se encontraron " << idEncontrados.size() << " películas para elegir: " << endl;
 
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i < limit && i < idEncontrados.size(); i++) {
             cout << "ID: " << idEncontrados[i].first << endl;
             cout << "Título: " << peliculas[idEncontrados[i].first].getTitulo() << endl;
         }
@@ -382,10 +384,12 @@ public:
                     if (encontrada) gestionarPelicula(currentId, cuenta);
                     break;
                 case 3:
+                    mostrarListaContinuarViendo(cuenta->getVerMasTarde(), limit);
                     continuarViendo(currentId, encontrada, limit, cuenta->getVerMasTarde());
                     if (encontrada) gestionarVerMasTarde(currentId, cuenta);
                     break;
                 case 4:
+                    mostrarListaRecomendadas(cuenta->getLikes(), limit);
                     seleccionarRecomendada(currentId, encontrada, limit, cuenta->getLikes());
                     if (encontrada) gestionarPelicula(currentId, cuenta);
                     break;
@@ -399,4 +403,3 @@ public:
         }
     }
 };
-

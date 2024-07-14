@@ -38,6 +38,6 @@ void Cuenta::agregarLike(const string &tag) {
     likes[tag]++;
 }
 
-void Cuenta::agregarVerAhora(string titulo) {
+void Cuenta::agregarVerAhora(const string &titulo) {
     cout << "Disfrutando la película: " << titulo << endl;
 }
