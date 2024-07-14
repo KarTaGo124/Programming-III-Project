@@ -1,4 +1,7 @@
 #include "gestor_cuentas.h"
+#include <iostream>
+
+using namespace std;
 
 GestorCuentas *GestorCuentas::instancia = nullptr;
 
@@ -33,7 +36,7 @@ const unordered_map<string, Cuenta *> &GestorCuentas::obtenerTodasLasCuentas() c
 }
 
 GestorCuentas::~GestorCuentas() {
-    for (auto &pair: cuentas) {
+    for (auto &pair : cuentas) {
         delete pair.second;
     }
 }

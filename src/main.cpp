@@ -19,15 +19,15 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
 
         int opcion;
         cin >> opcion;
-        cin.ignore();  // Ignorar el salto de línea residual en el buffer
+        cin.ignore();
 
         switch (opcion) {
             case 1: {
                 string correo, contrasenia;
                 cout << "Ingrese el correo: ";
-                getline(cin, correo);
+                cin >> correo;
                 cout << "Ingrese la contraseña: ";
-                getline(cin, contrasenia);
+                cin >> contrasenia;
 
                 if (cuentas.agregarCuenta(correo, contrasenia)) {
                     cuenta = cuentas.obtenerCuenta(correo);
@@ -41,9 +41,9 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
             case 2: {
                 string correo, contrasenia;
                 cout << "Ingrese el correo: ";
-                getline(cin, correo);
+                cin >> correo;
                 cout << "Ingrese la contraseña: ";
-                getline(cin, contrasenia);
+                cin >> contrasenia;
 
                 if (proxy.autenticar(correo, contrasenia)) {
                     cuenta = cuentas.obtenerCuenta(correo);
@@ -75,7 +75,9 @@ int main() {
     for (const auto &pair: todasLasCuentas) {
         proxy.agregarCuenta(pair.second);
     }
+
     menu(*cuentas, proxy);
+
 
     return 0;
 }
