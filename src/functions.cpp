@@ -76,7 +76,7 @@ string printContainer(unordered_set<string> container) {
 */
 void clearTerminal(){
   usleep(500000);
-  system("clear");
+  system("cls||clear");
 }
 
 bool ifExist(const unordered_set<int>& ids, int id, int limit){
