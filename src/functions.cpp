@@ -93,12 +93,15 @@ int printMenu(){
     cout << "1. Buscar por nombre " << endl;
     cout << "2. Buscar por categoría " << endl;
     cout << "3. Explorar mi lista de películas y series " << endl;
+    cout << "4. Explorar mi lista de recomendados" << endl;
     cout << "Elegir entre las opciones: ";
     cin >> opcion;
     cin.ignore();
-  }while(opcion < 1 || opcion > 3);
+  }while(opcion < 1 || opcion > 4);
       
   return opcion;
 }
+
+
 
 
