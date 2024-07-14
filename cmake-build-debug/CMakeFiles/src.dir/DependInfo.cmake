@@ -8,13 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/Login/credenciales.cpp" "CMakeFiles/src.dir/src/Login/credenciales.cpp.o" "gcc" "CMakeFiles/src.dir/src/Login/credenciales.cpp.o.d"
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/functions.cpp" "CMakeFiles/src.dir/src/functions.cpp.o" "gcc" "CMakeFiles/src.dir/src/functions.cpp.o.d"
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/inverted_trie/inverted.cpp" "CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.o" "gcc" "CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.o.d"
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/inverted_trie/nodo.cpp" "CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.o" "gcc" "CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.o.d"
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/main.cpp" "CMakeFiles/src.dir/src/main.cpp.o" "gcc" "CMakeFiles/src.dir/src/main.cpp.o.d"
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/pelicula.cpp" "CMakeFiles/src.dir/src/pelicula.cpp.o" "gcc" "CMakeFiles/src.dir/src/pelicula.cpp.o.d"
-  "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/src/streaming.cpp" "CMakeFiles/src.dir/src/streaming.cpp.o" "gcc" "CMakeFiles/src.dir/src/streaming.cpp.o.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/Login/credenciales.cpp" "CMakeFiles/src.dir/src/Login/credenciales.cpp.obj" "gcc" "CMakeFiles/src.dir/src/Login/credenciales.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/Login/cuentas.cpp" "CMakeFiles/src.dir/src/Login/cuentas.cpp.obj" "gcc" "CMakeFiles/src.dir/src/Login/cuentas.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/functions.cpp" "CMakeFiles/src.dir/src/functions.cpp.obj" "gcc" "CMakeFiles/src.dir/src/functions.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/gestor_archivos.cpp" "CMakeFiles/src.dir/src/gestor_archivos.cpp.obj" "gcc" "CMakeFiles/src.dir/src/gestor_archivos.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/inverted_trie/inverted.cpp" "CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.obj" "gcc" "CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/inverted_trie/nodo.cpp" "CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.obj" "gcc" "CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/main.cpp" "CMakeFiles/src.dir/src/main.cpp.obj" "gcc" "CMakeFiles/src.dir/src/main.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/pelicula.cpp" "CMakeFiles/src.dir/src/pelicula.cpp.obj" "gcc" "CMakeFiles/src.dir/src/pelicula.cpp.obj.d"
+  "C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/src/streaming.cpp" "CMakeFiles/src.dir/src/streaming.cpp.obj" "gcc" "CMakeFiles/src.dir/src/streaming.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

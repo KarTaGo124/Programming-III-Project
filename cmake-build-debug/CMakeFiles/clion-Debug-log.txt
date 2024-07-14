@@ -1,4 +1,4 @@
-/snap/clion/284/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3 -B /home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3" -B "C:\Users\Guillermo Galvez\OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA\Escritorio\UTEC\2024-1\Progra 3\PROYECTO\Proyecto-Progra-3\cmake-build-debug"
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -8,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.0s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/cmake-build-debug
+-- Build files have been written to: C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/cmake-build-debug

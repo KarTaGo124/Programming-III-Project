@@ -1,1 +1,3 @@
-/usr/bin/c++ -g CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.o CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.o CMakeFiles/src.dir/src/Login/credenciales.cpp.o CMakeFiles/src.dir/src/functions.cpp.o CMakeFiles/src.dir/src/main.cpp.o CMakeFiles/src.dir/src/pelicula.cpp.o CMakeFiles/src.dir/src/streaming.cpp.o -o src 
+"C:\Program Files\JetBrains\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\src.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc CMakeFiles\src.dir/objects.a @CMakeFiles\src.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\src.dir/objects.a -Wl,--no-whole-archive -o src.exe -Wl,--out-implib,libsrc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\src.dir\linkLibs.rsp
