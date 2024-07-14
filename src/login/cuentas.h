@@ -14,9 +14,11 @@ public:
     Cuenta(const string &email, const string &password);
 
     void setCorreo(const string &email);
+
     void setContrasenia(const string &password);
 
     string getCorreo() const;
+
     string getContrasenia() const;
 };
 

@@ -13,7 +13,7 @@ bool AutenticacionReal::autenticar(const string &correo, const string &contrasen
     return false;
 }
 
-void AutenticacionReal::agregarCuenta(Cuenta* cuenta) {
+void AutenticacionReal::agregarCuenta(Cuenta *cuenta) {
     usuarios[cuenta->getCorreo()] = cuenta->getContrasenia();
 }
 
@@ -21,6 +21,6 @@ bool ProxyAutenticacion::autenticar(const string &correo, const string &contrase
     return autenticacionReal.autenticar(correo, contrasenia);
 }
 
-void ProxyAutenticacion::agregarCuenta(Cuenta* cuenta) {
+void ProxyAutenticacion::agregarCuenta(Cuenta *cuenta) {
     autenticacionReal.agregarCuenta(cuenta);
 }

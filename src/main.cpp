@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void menu(vector<Cuenta*>& cuentas, ProxyAutenticacion& proxy) {
+void menu(vector<Cuenta *> &cuentas, ProxyAutenticacion &proxy) {
     bool autenticacionExitosa = false;
 
     while (!autenticacionExitosa) {
@@ -27,7 +27,7 @@ void menu(vector<Cuenta*>& cuentas, ProxyAutenticacion& proxy) {
                 getline(cin, correo);
                 cout << "Ingrese la contraseña: ";
                 getline(cin, contrasenia);
-                Cuenta* cuenta = new Cuenta(correo, contrasenia);
+                Cuenta *cuenta = new Cuenta(correo, contrasenia);
                 cuentas.push_back(cuenta);
                 proxy.agregarCuenta(cuenta);
                 GestorArchivos::obtenerInstancia()->guardarCuentas(cuentas);
@@ -58,15 +58,15 @@ void menu(vector<Cuenta*>& cuentas, ProxyAutenticacion& proxy) {
 }
 
 int main() {
-    vector<Cuenta*> cuentas;
+    vector<Cuenta *> cuentas;
     GestorArchivos::obtenerInstancia()->cargarCuentas(cuentas);
     ProxyAutenticacion proxy;
-    for (auto cuenta : cuentas) {
+    for (auto cuenta: cuentas) {
         proxy.agregarCuenta(cuenta);
     }
     menu(cuentas, proxy);
 
-    for (auto cuenta : cuentas) {
+    for (auto cuenta: cuentas) {
         delete cuenta;
     }
 

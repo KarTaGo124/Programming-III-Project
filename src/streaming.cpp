@@ -49,78 +49,78 @@ public:
         file.close();
     }
 
-    vector<pair<int,int>> buscarPorSubcadena(const string &subcadena) {
-      string subNormalizado = normalizarTxt(subcadena);
-      unordered_set<string> palabras = convertSet(subNormalizado);
-      unordered_map<int, int> peliculasScores;
-      
-      for(const auto& palabra: palabras){
-        unordered_set<int> temp = trie.buscarPorSubcadena(palabra);
-        for(const auto& id: temp){
-          const Pelicula& pelicula = peliculas.at(id);
-          int score = 0;
-          if(pelicula.getConteoPalabrasTitulo().count(palabra)){
-            score += pelicula.getConteoPalabrasTitulo().at(palabra) * 3;
-          }
-          if(pelicula.getConteoPalabrasSinopsis().count(palabra)){
-            score += pelicula.getConteoPalabrasSinopsis().count(palabra);
-          }
-          peliculasScores[id] += score;
-        }
-      }
-      
-      vector<pair<int,int>> sortedPeliculas = sorted(peliculasScores);
+    vector<pair<int, int>> buscarPorSubcadena(const string &subcadena) {
+        string subNormalizado = normalizarTxt(subcadena);
+        unordered_set<string> palabras = convertSet(subNormalizado);
+        unordered_map<int, int> peliculasScores;
 
-      return sortedPeliculas;
+        for (const auto &palabra: palabras) {
+            unordered_set<int> temp = trie.buscarPorSubcadena(palabra);
+            for (const auto &id: temp) {
+                const Pelicula &pelicula = peliculas.at(id);
+                int score = 0;
+                if (pelicula.getConteoPalabrasTitulo().count(palabra)) {
+                    score += pelicula.getConteoPalabrasTitulo().at(palabra) * 3;
+                }
+                if (pelicula.getConteoPalabrasSinopsis().count(palabra)) {
+                    score += pelicula.getConteoPalabrasSinopsis().count(palabra);
+                }
+                peliculasScores[id] += score;
+            }
+        }
+
+        vector<pair<int, int>> sortedPeliculas = sorted(peliculasScores);
+
+        return sortedPeliculas;
     }
 
     unordered_set<int> buscarPorCategoria(const string &tag) {
         return tagsMap[tag];
     }
 
-    void insertLike(int currentId){
-      unordered_set<string> tagsTemp; 
-      for(const auto& pelicula: peliculas){
-        if(pelicula.first == currentId){
-        tagsTemp = pelicula.second.getCategorias();
+    void insertLike(int currentId) {
+        unordered_set<string> tagsTemp;
+        for (const auto &pelicula: peliculas) {
+            if (pelicula.first == currentId) {
+                tagsTemp = pelicula.second.getCategorias();
+            }
         }
-      }
 
-      for(const auto& tag: tagsTemp){
-        likesMap[tag]++;
-      }
+        for (const auto &tag: tagsTemp) {
+            likesMap[tag]++;
+        }
     }
 
     void printTags(int limit) {
-        for (const auto& tag: tagsMap) {
-          if(limit-- == 0) break;
-          cout << tag.first << endl;
+        for (const auto &tag: tagsMap) {
+            if (limit-- == 0) break;
+            cout << tag.first << endl;
         }
     }
 
-    void printTitulo(const unordered_set<int>& idPeliculas, int limit){
-      cout << "Se encontraron " << idPeliculas.size() << " películas para elegir: " << endl;
-      for(const auto& id: idPeliculas){
-        if(limit-- == 0) break;
-        cout << "ID: " << id << endl;
-        cout << "Titulo: " << peliculas[id].getTitulo() << endl;
-      }
+    void printTitulo(const unordered_set<int> &idPeliculas, int limit) {
+        cout << "Se encontraron " << idPeliculas.size() << " películas para elegir: " << endl;
+        for (const auto &id: idPeliculas) {
+            if (limit-- == 0) break;
+            cout << "ID: " << id << endl;
+            cout << "Titulo: " << peliculas[id].getTitulo() << endl;
+        }
     }
 
-    void printEncontrados(const vector<pair<int,int>> &idEncontrados, int limit) {
+    void printEncontrados(const vector<pair<int, int>> &idEncontrados, int limit) {
         cout << "Se encontraron " << idEncontrados.size() << " películas para elegir: " << endl;
 
-        for (int i  = 0; i < limit; i++) {
+        for (int i = 0; i < limit; i++) {
             cout << "ID: " << idEncontrados[i].first << endl;
             cout << "Título: " << peliculas[idEncontrados[i].first].getTitulo() << endl;
             //cout << "Conteo importancia: " << idEncontrados[i].second << endl;
         }
     }
 
-    void printPelicula(int id){
-      clearTerminal();
-      cout << "Titulo: " << peliculas[id].getTitulo() << endl;
-      cout << "Sinopsis: " << peliculas[id].getSinopsis() << endl;
+    void printPelicula(int id) {
+        clearTerminal();
+        cout << "Titulo: " << peliculas[id].getTitulo() << endl;
+        cout << "Sinopsis: " << peliculas[id].getSinopsis() << endl;
     }
 
     void cargarPeliculas(const string &filename) {
