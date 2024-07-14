@@ -1,3 +1,0 @@
-C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/cmake-build-debug/CMakeFiles/src.dir
-C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/UTEC/2024-1/Progra 3/PROYECTO/Proyecto-Progra-3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
