@@ -92,6 +92,8 @@ public:
       }
     }
 
+
+
     void printTags(int limit) {
         for (const auto& tag: tagsMap) {
           if(limit-- == 0) break;
@@ -125,7 +127,7 @@ public:
     } 
 
     void systemOn(){
-      string filename = "/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/data/data.csv";
+      string filename = "../data/data.csv";
       
       cout << "Subiendo peliculas..." << endl;
       loadMovies(filename);
@@ -147,8 +149,8 @@ public:
         clearTerminal();
         string subcadena;
         cout << "Ingrese nombre de serie o película: ";
-        cin.ignore();
         getline(cin, subcadena);
+        //cin.ignore();
 
         cout << subcadena << endl;
 
