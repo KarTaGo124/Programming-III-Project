@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/src.dir/src/inverted_trie/inverted.cpp.o CMakeFiles/src.dir/src/inverted_trie/nodo.cpp.o CMakeFiles/src.dir/src/Login/credenciales.cpp.o CMakeFiles/src.dir/src/functions.cpp.o CMakeFiles/src.dir/src/main.cpp.o CMakeFiles/src.dir/src/pelicula.cpp.o CMakeFiles/src.dir/src/streaming.cpp.o -o src 

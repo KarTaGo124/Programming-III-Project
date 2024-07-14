@@ -1,3 +1,0 @@
-/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/cmake-build-debug/CMakeFiles/src.dir
-/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/leo/Documents/UTEC/Ciclos/3er_ciclo/Programacion_III/2024-I/Proyecto/Proyecto-Progra-3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
