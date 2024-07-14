@@ -75,7 +75,7 @@ string printContainer(unordered_set<string> container) {
 }
 */
 void clearTerminal(){
-  sleep(1);
+  usleep(500000);
   system("clear");
 }
 
