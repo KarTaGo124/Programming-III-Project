@@ -79,7 +79,7 @@ void clearTerminal(){
   system("clear");
 }
 
-bool ifExist(const unordered_set<int> ids, int id, int limit){
+bool ifExist(const unordered_set<int>& ids, int id, int limit){
   for (auto it = ids.begin(); it != ids.end() && limit > 0; ++it) {
         if( *it == id) return true;
         --limit;
@@ -101,10 +101,4 @@ int printMenu(){
   return opcion;
 }
 
-template<typename T1, typename T2>
-vector<pair<T1, T2>> sorted(const unordered_map<T1, T2> containerIn){
-  vector<pair<T1,T2>> containerOut(containerIn.begin(), containerIn.end());
-  sort(containerOut.begin(), containerOut.end(), [](const pair<T1, T2>& a, const pair<T1, T2>& b){return a.second > b.second;});
 
-  return containerOut;
-}

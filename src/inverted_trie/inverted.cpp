@@ -1,5 +1,5 @@
 #include "nodo.cpp"
-#include "../functions.cpp"
+#include "../functions.h"
 
 #include <cctype>
 #include <unordered_set>
