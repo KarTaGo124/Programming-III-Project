@@ -22,6 +22,56 @@ El objetivo del proyecto final es implementar una plataforma de *streaming*. Un 
 * Grupos de cuatro personas como máximo y de tres como mínimo. No se aceptarán grupos de dos o una persona.
 * Subir el programa a un repositorio en Github. Aquí debe de estar toda la documentación sobre el proyecto.
 * Grabar su presentación y colocar el link en su repositorio. El video debe tener un máximo de 15 minutos. Aquel grupo que sobrepase el tiempo tendrá una penalización en su nota.
-* Cumplir con la rúbrica del proyecto.
+* Cumplir con la rúbrica del proyecto.}
 
+# Funcionamiento Técnico del Proyecto
 
+## Introducción
+Este programa está diseñado para gestionar un sistema de streaming que permite autenticar usuarios, administrar y recomendar películas. El sistema incluye funcionalidades para cargar películas, realizar búsquedas, recomendar películas, y gestionar listas de "ver más tarde" y "me gusta". La implementación se divide en varios módulos que incluyen la gestión de credenciales, la estructura de datos de las películas, un algoritmo para búsqueda eficiente, y la lógica principal del sistema de streaming.
+
+## Estructura del proyecto
+
+### pelicula.cpp
+Define la clase **Pelicula** que representa una película con atributos como ID, título, sinopsis y categorías. Proporciona métodos para leer películas desde un archivo CSV y contar las palabras en el título y la sinopsis.
+
+### nodo.cpp
+Define la clase **NodoTrie**, que representa un nodo en un trie. Cada nodo puede tener hijos y almacenar IDs de películas.
+
+### inverted.cpp
+Define la clase **InvertedTrie**, que es un trie invertido para realizar búsquedas eficientes de películas basadas en subcadenas del título y la sinopsis.
+
+### streaming.cpp
+Implementa la clase **Streaming**, que es la clase principal del sistema de streaming. Gestiona la carga de películas, la búsqueda, las recomendaciones, y la interacción del usuario con el sistema.
+
+### functions.cpp
+Proporciona funciones auxiliares como normalización de texto, conversión de cadenas a conjuntos de palabras, y limpieza de la terminal.
+
+## Descripción técnica
+
+### Estructura de Datos de Películas
+La clase **Pelicula** almacena la información de cada película y proporciona métodos para leer datos desde un archivo CSV y contar palabras en el título y la sinopsis. Utiliza unordered_set para almacenar categorías y unordered_map para contar palabras.
+
+### Trie Invertido
+La clase **InvertedTrie** utiliza un trie invertido para indexar palabras del título y la sinopsis de cada película. Esto permite realizar búsquedas eficientes de películas basadas en subcadenas de texto.
+
+### Sistema de Streaming
+La clase **Streaming** gestiona la lógica principal del sistema. Incluye métodos para:
+* Cargar películas desde un archivo.
+* Buscar películas por subcadena en el título o sinopsis.
+* Buscar películas por categoría.
+* Recomendar películas basadas en los gustos del usuario.
+* Gestionar listas de "ver más tarde" y "me gusta".
+
+### Funciones Auxiliares
+El archivo **functions.cpp** incluye funciones para normalizar texto (remover caracteres especiales y convertir a minúsculas), convertir texto a conjuntos de palabras, y limpiar la terminal.
+
+## Ejecución del Sistema
+Para ejecutar el sistema de streaming:
+
+Compilar todos los archivos **.cpp**.
+Ejecutar el programa principal.
+Interactuar con el menú del sistema para buscar, ver y gestionar películas.
+El sistema carga inicialmente las películas desde un archivo CSV y permite al usuario buscar películas por nombre o categoría, ver recomendaciones, y gestionar sus listas de "ver más tarde" y "me gusta".
+
+## Conclusión
+Este sistema de streaming combina múltiples conceptos de estructuras de datos, patrones de diseño, y algoritmos de búsqueda para proporcionar una experiencia eficiente y amigable para el usuario.
