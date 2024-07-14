@@ -1,13 +1,14 @@
 #include "gestor_archivos.h"
-#include "login/credenciales.h"
-#include "login/cuentas.h"
+#include "login/autenticacion.h"
+#include "login/gestor_cuentas.h"
 #include "streaming.cpp"
 
-#include <string>
+#include <iostream>
 
 using namespace std;
 
-void menu(vector<Cuenta *> &cuentas, ProxyAutenticacion &proxy) {
+void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
+    Cuenta *cuenta = nullptr;
     bool autenticacionExitosa = false;
 
     while (!autenticacionExitosa) {
@@ -27,10 +28,14 @@ void menu(vector<Cuenta *> &cuentas, ProxyAutenticacion &proxy) {
                 getline(cin, correo);
                 cout << "Ingrese la contraseña: ";
                 getline(cin, contrasenia);
-                Cuenta *cuenta = new Cuenta(correo, contrasenia);
-                cuentas.push_back(cuenta);
-                proxy.agregarCuenta(cuenta);
-                GestorArchivos::obtenerInstancia()->guardarCuentas(cuentas);
+
+                if (cuentas.agregarCuenta(correo, contrasenia)) {
+                    cuenta = cuentas.obtenerCuenta(correo);
+                    proxy.agregarCuenta(cuenta);
+                    GestorArchivos::obtenerInstancia()->guardarCuentas(cuentas);
+                } else {
+                    cout << "Error: El correo ya está registrado.\n";
+                }
                 break;
             }
             case 2: {
@@ -41,7 +46,10 @@ void menu(vector<Cuenta *> &cuentas, ProxyAutenticacion &proxy) {
                 getline(cin, contrasenia);
 
                 if (proxy.autenticar(correo, contrasenia)) {
+                    cuenta = cuentas.obtenerCuenta(correo);
                     autenticacionExitosa = true;
+                } else {
+                    cout << "Error: Credenciales incorrectas.\n";
                 }
                 break;
             }
@@ -53,22 +61,21 @@ void menu(vector<Cuenta *> &cuentas, ProxyAutenticacion &proxy) {
         }
     }
 
-    Streaming streaming;
-    streaming.systemOn();
+    if (cuenta) {
+        Streaming streaming;
+        streaming.systemOn(cuenta);
+    }
 }
 
 int main() {
-    vector<Cuenta *> cuentas;
-    GestorArchivos::obtenerInstancia()->cargarCuentas(cuentas);
+    GestorCuentas *cuentas = GestorCuentas::obtenerInstancia();
+    GestorArchivos::obtenerInstancia()->cargarCuentas(*cuentas);
     ProxyAutenticacion proxy;
-    for (auto cuenta: cuentas) {
-        proxy.agregarCuenta(cuenta);
+    const auto &todasLasCuentas = cuentas->obtenerTodasLasCuentas();
+    for (const auto &pair: todasLasCuentas) {
+        proxy.agregarCuenta(pair.second);
     }
-    menu(cuentas, proxy);
-
-    for (auto cuenta: cuentas) {
-        delete cuenta;
-    }
+    menu(*cuentas, proxy);
 
     return 0;
 }

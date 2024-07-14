@@ -1,7 +1,7 @@
 #include "inverted_trie/inverted.cpp"
 #include "pelicula.cpp"
 #include "functions.h"
-
+#include "login/cuenta.h"
 #include <algorithm>
 #include <iostream>
 #include <unordered_map>
@@ -17,8 +17,6 @@ private:
     unordered_map<int, Pelicula> peliculas;
     InvertedTrie trie;
     unordered_map<string, unordered_set<int>> tagsMap;
-    unordered_set<int> verMasTarde;
-    unordered_map<string, int> likesMap;
 
     void insertTags(const int &id, const unordered_set<string> &tags) {
         for (const auto &tag: tags) {
@@ -78,7 +76,7 @@ public:
         return tagsMap[tag];
     }
 
-    void insertLike(int currentId) {
+    void insertLike(Cuenta* cuenta, int currentId) {
         unordered_set<string> tagsTemp;
         for (const auto &pelicula: peliculas) {
             if (pelicula.first == currentId) {
@@ -87,7 +85,7 @@ public:
         }
 
         for (const auto &tag: tagsTemp) {
-            likesMap[tag]++;
+            cuenta->agregarLike(tag);
         }
     }
 
@@ -113,7 +111,6 @@ public:
         for (int i = 0; i < limit; i++) {
             cout << "ID: " << idEncontrados[i].first << endl;
             cout << "Título: " << peliculas[idEncontrados[i].first].getTitulo() << endl;
-            //cout << "Conteo importancia: " << idEncontrados[i].second << endl;
         }
     }
 
@@ -168,8 +165,9 @@ public:
             printEncontrados(idEncontrados, limit);
             cout << "1. Seleccionar" << endl;
             cout << "2. Ver más" << endl;
+            cout << "3. Regresar" << endl;
             cout << "Elegir opción: ";
-            int opcion1 = obtenerOpcionUsuario(1, 2);
+            int opcion1 = obtenerOpcionUsuario(1, 3);
 
             if (opcion1 == 1) {
                 unordered_set<int> idLista;
@@ -189,6 +187,8 @@ public:
                 }
             } else if (opcion1 == 2) {
                 limit += 5;
+            } else {
+                break;
             }
         }
     }
@@ -199,24 +199,25 @@ public:
             printTags(limit);
             cout << "1. Seleccionar" << endl;
             cout << "2. Ver más" << endl;
+            cout << "3. Regresar" << endl;
             cout << "Elegir opción: ";
-            int opcion2 = obtenerOpcionUsuario(1, 2);
+            int opcion2 = obtenerOpcionUsuario(1, 3);
 
             if (opcion2 == 1) {
                 string tag;
                 cout << "Ingrese categoria: ";
-                //cin.ignore();
                 getline(cin, tag);
                 auto idEncontrados = buscarPorCategoria(tag);
                 limit = 5;
 
-                while (!encontrada) {
+                while (true) {
                     clearTerminal();
                     printTitulo(idEncontrados, limit);
                     cout << "1. Seleccionar" << endl;
                     cout << "2. Ver más" << endl;
+                    cout << "3. Regresar" << endl;
                     cout << "Elegir opción: ";
-                    int opcion3 = obtenerOpcionUsuario(1, 2);
+                    int opcion3 = obtenerOpcionUsuario(1, 3);
 
                     if (opcion3 == 1) {
                         int id;
@@ -231,23 +232,28 @@ public:
                         }
                     } else if (opcion3 == 2) {
                         limit += 5;
+                    } else {
+                        break;
                     }
                 }
             } else if (opcion2 == 2) {
                 limit += 5;
+            } else {
+                break;
             }
         }
     }
 
-    void continuarViendo(int &currentId, bool &encontrada, int limit) {
+    void continuarViendo(int &currentId, bool &encontrada, int limit, unordered_set<int>& verMasTarde) {
         while (!encontrada) {
             clearTerminal();
             cout << "Continuar viendo: " << endl;
             printTitulo(verMasTarde, limit);
             cout << "1. Seleccionar" << endl;
             cout << "2. Ver más" << endl;
+            cout << "3. Regresar" << endl;
             cout << "Elegir opción: ";
-            int opcion4 = obtenerOpcionUsuario(1, 2);
+            int opcion4 = obtenerOpcionUsuario(1, 3);
 
             if (opcion4 == 1) {
                 int id;
@@ -262,19 +268,24 @@ public:
                 }
             } else if (opcion4 == 2) {
                 limit += 5;
+            } else {
+                break;
             }
         }
     }
 
-    void seleccionarRecomendada(int &currentId, bool &encontrada, int limit, const unordered_set<int> &lista) {
+    void seleccionarRecomendada(int &currentId, bool &encontrada, int limit, unordered_map<string, int>& likesMap) {
         while (!encontrada) {
             clearTerminal();
             cout << "Recomendadas para ti: " << endl;
+            vector<pair<string, int>> tagsLikes = sorted(likesMap);
+            auto lista = buscarPorCategoria(tagsLikes[0].first);
             printTitulo(lista, limit);
             cout << "1. Seleccionar" << endl;
             cout << "2. Ver más" << endl;
+            cout << "3. Regresar" << endl;
             cout << "Elegir opción: ";
-            int opcion5 = obtenerOpcionUsuario(1, 2);
+            int opcion5 = obtenerOpcionUsuario(1, 3);
 
             if (opcion5 == 1) {
                 int id;
@@ -289,42 +300,44 @@ public:
                 }
             } else if (opcion5 == 2) {
                 limit += 5;
+            } else {
+                break;
             }
         }
     }
 
-    void gestionarPelicula(int currentId) {
+    void gestionarPelicula(int currentId, Cuenta* cuenta) {
         int opcion6;
         do {
             cout << "1. Me gusta" << endl;
             cout << "2. Ver más tarde" << endl;
             cout << "3. Ver ahora" << endl;
+            cout << "4. Regresar" << endl;
             cout << "Elegir opción: ";
             cin >> opcion6;
-        } while (opcion6 < 1 || opcion6 > 3);
+        } while (opcion6 < 1 || opcion6 > 4);
 
         if (opcion6 == 1) {
-            insertLike(currentId);
+            insertLike(cuenta, currentId);
         } else if (opcion6 == 2) {
-            verMasTarde.insert(currentId);
+            cuenta->agregarVerMasTarde(currentId);
+        } else if (opcion6 == 3) {
+            cuenta->agregarVerAhora(peliculas[currentId].getTitulo());
         } else {
-            cout << "Viendo Película ..." << endl;
+            return;
         }
     }
 
-
-    void systemOn() {
+    void systemOn(Cuenta* cuenta) {
         string filename = "../data/data.csv";
-
         cargarPeliculas(filename);
 
         bool encontrada = false;
         int limit = 5;
-        int currentId;
-        unordered_set<int> lista;
+        int currentId = 0;
 
-        mostrarListaContinuarViendo(verMasTarde, limit);
-        mostrarListaRecomendadas(likesMap, limit);
+        mostrarListaContinuarViendo(cuenta->getVerMasTarde(), limit);
+        mostrarListaRecomendadas(cuenta->getLikes(), limit);
 
         int opcion = printMenu();
 
@@ -336,14 +349,18 @@ public:
                 buscarPorCategoria(currentId, encontrada, limit);
                 break;
             case 3:
-                continuarViendo(currentId, encontrada, limit);
+                continuarViendo(currentId, encontrada, limit, cuenta->getVerMasTarde());
                 break;
+            case 4:
+                seleccionarRecomendada(currentId, encontrada, limit, cuenta->getLikes());
+                break;
+            case 5:
+                return;
             default:
-                seleccionarRecomendada(currentId, encontrada, limit, lista);
                 break;
         }
 
-        gestionarPelicula(currentId);
+        gestionarPelicula(currentId, cuenta);
     }
-};
 
+};

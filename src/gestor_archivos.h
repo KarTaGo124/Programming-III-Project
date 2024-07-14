@@ -1,23 +1,21 @@
 #ifndef GESTOR_ARCHIVOS_H
 #define GESTOR_ARCHIVOS_H
 
+#include "login/gestor_cuentas.h"
 #include <vector>
-#include "login/cuentas.h"
-
-using namespace std;
 
 class GestorArchivos {
 private:
     static GestorArchivos *instancia;
 
-    GestorArchivos() {}
+    GestorArchivos() = default;
 
 public:
     static GestorArchivos *obtenerInstancia();
 
-    static void guardarCuentas(const vector<Cuenta *> &cuentas);
+    void guardarCuentas(const GestorCuentas &cuentas);
 
-    static void cargarCuentas(vector<Cuenta *> &cuentas);
+    void cargarCuentas(GestorCuentas &cuentas);
 };
 
 #endif // GESTOR_ARCHIVOS_H

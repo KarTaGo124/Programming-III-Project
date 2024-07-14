@@ -75,9 +75,13 @@ string printContainer(unordered_set<string> container) {
     return txt;
 }
 */
-void clearTerminal(){
+void clearTerminal() {
     usleep(500000);
-    system("clear||cls");
+#if defined(_WIN32) || defined(_WIN64)
+    system("cls");
+#else
+    system("clear");
+#endif
 }
 
 bool ifExist(const unordered_set<int> &ids, int id, int limit) {
@@ -95,10 +99,11 @@ int printMenu() {
         cout << "2. Buscar por categoría " << endl;
         cout << "3. Explorar mi lista de películas y series " << endl;
         cout << "4. Explorar mi lista de recomendados" << endl;
+        cout << "5. Regresar" << endl;
         cout << "Elegir entre las opciones: ";
         cin >> opcion;
         cin.ignore();
-    } while (opcion < 1 || opcion > 4);
+    } while (opcion < 1 || opcion > 5);
 
     return opcion;
 }
