@@ -22,12 +22,6 @@
   <component name="ChangeListManager">
     <list default="true" id="32b27aa9-6738-4b3f-b710-fcf9f513b90d" name="Changes" comment="gestor de cuentas y streaming">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gestor_archivos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestor_archivos.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gestor_archivos.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestor_archivos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/cuenta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/cuenta.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/cuenta.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/cuenta.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/gestor_cuentas.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/gestor_cuentas.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/streaming.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/streaming.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +73,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.src.executor": "Debug",
+    "CMake Application.src.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -101,9 +95,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="src" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Proyecto-Progra-3" TARGET_NAME="src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Proyecto-Progra-3" RUN_TARGET_NAME="src">
