@@ -31,7 +31,9 @@ public:
 
     void agregarVerMasTarde(int idPelicula);
 
-    void agregarLike(const string &tag);
+    void quitarVerMasTarde(int idPelicula);
+
+    void agregarLike(const string &tag, int count);
 
     void agregarVerAhora(const string &titulo);
 };

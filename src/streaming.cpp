@@ -2,6 +2,8 @@
 #include "pelicula.cpp"
 #include "functions.h"
 #include "login/cuenta.h"
+#include "login/gestor_cuentas.h"
+#include "gestor_archivos.h"
 #include <algorithm>
 #include <iostream>
 #include <unordered_map>
@@ -84,7 +86,7 @@ public:
         }
 
         for (const auto &tag : tagsTemp) {
-            cuenta->agregarLike(tag);
+            cuenta->agregarLike(tag,1);
         }
     }
 
@@ -359,10 +361,11 @@ public:
             int opcion6 = obtenerOpcionUsuario(1, 3);
 
             if (opcion6 == 1) {
-                cuenta->agregarLike(peliculas[currentId].getTitulo());
+                cuenta->agregarLike(peliculas[currentId].getTitulo(),1);
                 volver = true;
             } else if (opcion6 == 2) {
                 cuenta->agregarVerAhora(peliculas[currentId].getTitulo());
+                cuenta->quitarVerMasTarde(currentId);
                 volver = true;
             } else {
                 volver = true;
@@ -374,6 +377,8 @@ public:
         string filename = "../data/data.csv";
         cargarPeliculas(filename);
 
+        GestorArchivos* gestorArchivos = GestorArchivos::obtenerInstancia();
+
         while (true) {
             bool encontrada = false;
             int limit = 5;
@@ -381,7 +386,6 @@ public:
 
             cout << "--------------------------------" << endl;
             mostrarListaContinuarViendo(cuenta->getVerMasTarde(), limit);
-
             mostrarListaRecomendadas(cuenta->getLikes(), limit);
 
             int opcion = printMenu();
@@ -406,10 +410,16 @@ public:
                 case 5:
                     clearTerminal();
                     cout << "Cerrando sesión..." << endl;
+
+                    // Guardar la cuenta actual antes de salir
+                    gestorArchivos->guardarCuenta(*cuenta);
+
                     exit(0); // Terminar el programa completamente
+                    break;
                 default:
                     break;
             }
         }
     }
+
 };

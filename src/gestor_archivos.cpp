@@ -8,16 +8,86 @@ using namespace std;
 
 GestorArchivos* GestorArchivos::instancia = nullptr;
 
-GestorArchivos* GestorArchivos::obtenerInstancia() {
-    if (instancia == nullptr) {
-        instancia = new GestorArchivos();
+void GestorArchivos::cargarCuentas(GestorCuentas &cuentas) {
+    ifstream archivo("../archivos/cuentas.txt");
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo." << endl;
+        return;
     }
-    return instancia;
+
+    string linea;
+    while (getline(archivo, linea)) {
+        stringstream ss(linea);
+        string temp, correo, contrasenia;
+
+        // Leer correo
+        ss >> temp >> correo;
+
+        // Leer contraseña
+        ss >> temp >> contrasenia;
+
+        // Crear o actualizar cuenta
+        Cuenta *cuenta = cuentas.obtenerCuenta(correo);
+        if (!cuenta) {
+            cuenta = new Cuenta(correo, contrasenia);
+            cuentas.agregarCuenta(correo, contrasenia);
+        } else {
+            cuenta->setContrasenia(contrasenia);
+        }
+
+        // Leer VerMasTarde
+        string verMasTarde;
+        ss >> verMasTarde;
+        if (verMasTarde.find("VerMasTarde:") == 0) {
+            verMasTarde = verMasTarde.substr(12); // Remover "VerMasTarde:"
+            stringstream ssVerMasTarde(verMasTarde);
+            string id;
+            while (getline(ssVerMasTarde, id, ',')) {
+                if (!id.empty()) {
+                    try {
+                        int idNum = stoi(id);
+                        cuenta->agregarVerMasTarde(idNum);
+                    } catch (const invalid_argument &e) {
+                        cerr << "Error al convertir id '" << id << "' a entero: " << e.what() << endl;
+                    } catch (const out_of_range &e) {
+                        cerr << "Error: id '" << id << "' fuera de rango: " << e.what() << endl;
+                    }
+                }
+            }
+        }
+
+        // Leer Likes
+        string likes;
+        ss >> likes;
+        if (likes.find("Likes:") == 0) {
+            likes = likes.substr(6); // Remover "Likes:"
+            stringstream ssLikes(likes);
+            string like;
+            while (getline(ssLikes, like, ',')) {
+                if (!like.empty()) {
+                    size_t sep = like.rfind(':'); // Buscar el último ':'
+                    if (sep != string::npos) {
+                        string tag = like.substr(0, sep);
+                        string countStr = like.substr(sep + 1);
+                        try {
+                            int count = stoi(countStr);
+                            cuenta->getLikes()[tag] += count; // Acumular likes en lugar de sobrescribir
+                        } catch (const invalid_argument &e) {
+                            cerr << "Error al convertir count '" << countStr << "' a entero: " << e.what() << endl;
+                        } catch (const out_of_range &e) {
+                            cerr << "Error: count '" << countStr << "' fuera de rango: " << e.what() << endl;
+                        }
+                    } else {
+                        cerr << "Formato inválido de like: " << like << endl;
+                    }
+                }
+            }
+        }
+    }
+    archivo.close();
 }
 
-void GestorArchivos::guardarCuentas(const GestorCuentas &cuentas) {
-    const auto &todasLasCuentas = cuentas.obtenerTodasLasCuentas();
-
+void GestorArchivos::guardarCuenta(Cuenta &cuenta) {
     // Leer todas las líneas del archivo existente
     vector<string> lineas;
     ifstream archivoLectura("../archivos/cuentas.txt");
@@ -29,107 +99,60 @@ void GestorArchivos::guardarCuentas(const GestorCuentas &cuentas) {
 
     // Abrir el archivo en modo de escritura
     ofstream archivo("../archivos/cuentas.txt");
-    for (const auto &pair : todasLasCuentas) {
-        auto cuenta = pair.second;
-        bool cuentaActualizada = false;
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo para escribir." << endl;
+        return;
+    }
 
-        // Buscar y actualizar la línea correspondiente al correo de la cuenta
-        for (auto &linea : lineas) {
-            if (linea.find("Correo: " + cuenta->getCorreo()) != string::npos) {
-                stringstream nuevaLinea;
-                nuevaLinea << "Correo: " << cuenta->getCorreo() << " Contrasenia: " << cuenta->getContrasenia();
+    bool cuentaActualizada = false;
 
-                // Guardar ver más tarde
-                nuevaLinea << " VerMasTarde:";
-                for (auto id : cuenta->getVerMasTarde()) {
-                    nuevaLinea << id << ",";
-                }
-
-                // Guardar likes
-                nuevaLinea << " Likes:";
-                for (auto &like : cuenta->getLikes()) {
-                    nuevaLinea << like.first << ":" << like.second << ",";
-                }
-
-                linea = nuevaLinea.str();
-                cuentaActualizada = true;
-                break;
-            }
-        }
-
-        // Si la cuenta no se encontró en el archivo, agregarla al final
-        if (!cuentaActualizada) {
+    // Buscar y actualizar la línea correspondiente al correo de la cuenta
+    for (auto &linea : lineas) {
+        if (linea.find("Correo: " + cuenta.getCorreo()) != string::npos) {
             stringstream nuevaLinea;
-            nuevaLinea << "Correo: " << cuenta->getCorreo() << " Contrasenia: " << cuenta->getContrasenia();
+            nuevaLinea << "Correo: " << cuenta.getCorreo() << " Contrasenia: " << cuenta.getContrasenia();
 
             // Guardar ver más tarde
             nuevaLinea << " VerMasTarde:";
-            for (auto id : cuenta->getVerMasTarde()) {
+            for (auto id : cuenta.getVerMasTarde()) {
                 nuevaLinea << id << ",";
             }
 
             // Guardar likes
             nuevaLinea << " Likes:";
-            for (auto &like : cuenta->getLikes()) {
+            for (auto &like : cuenta.getLikes()) {
                 nuevaLinea << like.first << ":" << like.second << ",";
             }
 
-            lineas.push_back(nuevaLinea.str());
+            linea = nuevaLinea.str();
+            cuentaActualizada = true;
+            break;
         }
+    }
+
+    // Si la cuenta no se encontró en el archivo, agregarla al final
+    if (!cuentaActualizada) {
+        stringstream nuevaLinea;
+        nuevaLinea << "Correo: " << cuenta.getCorreo() << " Contrasenia: " << cuenta.getContrasenia();
+
+        // Guardar ver más tarde
+        nuevaLinea << " VerMasTarde:";
+        for (auto id : cuenta.getVerMasTarde()) {
+            nuevaLinea << id << ",";
+        }
+
+        // Guardar likes
+        nuevaLinea << " Likes:";
+        for (auto &like : cuenta.getLikes()) {
+            nuevaLinea << like.first << ":" << like.second << ",";
+        }
+
+        lineas.push_back(nuevaLinea.str());
     }
 
     // Escribir todas las líneas al archivo
     for (const auto &linea : lineas) {
         archivo << linea << endl;
-    }
-    archivo.close();
-}
-
-void GestorArchivos::cargarCuentas(GestorCuentas &cuentas) {
-    ifstream archivo("../archivos/cuentas.txt");
-    string line;
-
-    while (getline(archivo, line)) {
-        stringstream ss(line);
-        string temp, correo, contrasenia;
-        ss >> temp >> correo >> temp >> contrasenia;
-
-        Cuenta *cuenta = new Cuenta(correo, contrasenia);
-
-        // Leer ver más tarde
-        string verMasTarde;
-        ss >> verMasTarde;
-        if (verMasTarde.find("VerMasTarde:") == 0) {
-            verMasTarde = verMasTarde.substr(12); // Remover "VerMasTarde:"
-            stringstream ssVerMasTarde(verMasTarde);
-            string id;
-            while (getline(ssVerMasTarde, id, ',')) {
-                if (!id.empty()) {
-                    cuenta->agregarVerMasTarde(stoi(id));
-                }
-            }
-        }
-
-        // Leer likes
-        string likes;
-        ss >> likes;
-        if (likes.find("Likes:") == 0) {
-            likes = likes.substr(6); // Remover "Likes:"
-            stringstream ssLikes(likes);
-            string like;
-            while (getline(ssLikes, like, ',')) {
-                if (!like.empty()) {
-                    size_t sep = like.find(':');
-                    string tag = like.substr(0, sep);
-                    int count = stoi(like.substr(sep + 1));
-                    cuenta->getLikes()[tag] = count;
-                }
-            }
-        }
-
-        cuentas.agregarCuenta(correo, contrasenia);
-        *cuentas.obtenerCuenta(correo) = *cuenta; // Copiar datos a la cuenta en gestor
-        delete cuenta; // Eliminar cuenta temporal
     }
     archivo.close();
 }

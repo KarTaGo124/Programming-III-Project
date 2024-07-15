@@ -10,11 +10,15 @@ private:
     GestorArchivos() = default;
 
 public:
-    static GestorArchivos *obtenerInstancia();
-
-    void guardarCuentas(const GestorCuentas &cuentas);
+    static GestorArchivos *obtenerInstancia() {
+        if (instancia == nullptr) {
+            instancia = new GestorArchivos();
+        }
+        return instancia;
+    }
 
     void cargarCuentas(GestorCuentas &cuentas);
+    void guardarCuenta(Cuenta &cuenta);
 };
 
-#endif // GESTOR_ARCHIVOS_H
+#endif

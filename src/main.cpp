@@ -32,7 +32,8 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
                 if (cuentas.agregarCuenta(correo, contrasenia)) {
                     cuenta = cuentas.obtenerCuenta(correo);
                     proxy.agregarCuenta(cuenta);
-                    GestorArchivos::obtenerInstancia()->guardarCuentas(cuentas);
+                    GestorArchivos::obtenerInstancia()->guardarCuenta(*cuenta); // Guardar la nueva cuenta
+                    cout << "Registro exitoso.\n";
                 } else {
                     cout << "Error: El correo ya está registrado.\n";
                 }
@@ -54,7 +55,6 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
                 break;
             }
             case 3:
-                GestorArchivos::obtenerInstancia()->guardarCuentas(cuentas);
                 return;
             default:
                 cout << "Opción inválida. Por favor, elija una opción válida. " << endl;
@@ -64,6 +64,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
     if (cuenta) {
         Streaming streaming;
         streaming.systemOn(cuenta);
+        GestorArchivos::obtenerInstancia()->guardarCuenta(*cuenta); // Guardar la cuenta al cerrar sesión
     }
 }
 
@@ -72,7 +73,7 @@ int main() {
     GestorArchivos::obtenerInstancia()->cargarCuentas(*cuentas);
     ProxyAutenticacion proxy;
     const auto &todasLasCuentas = cuentas->obtenerTodasLasCuentas();
-    for (const auto &pair: todasLasCuentas) {
+    for (const auto &pair : todasLasCuentas) {
         proxy.agregarCuenta(pair.second);
     }
 

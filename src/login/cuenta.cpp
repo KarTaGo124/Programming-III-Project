@@ -34,9 +34,15 @@ void Cuenta::agregarVerMasTarde(int idPelicula) {
     verMasTarde.insert(idPelicula);
 }
 
-void Cuenta::agregarLike(const string &tag) {
-    likes[tag]++;
+void Cuenta::quitarVerMasTarde(int idPelicula) {
+    if (verMasTarde.find(idPelicula) != verMasTarde.end())
+        verMasTarde.erase(idPelicula);
 }
+
+void Cuenta::agregarLike(const string &tag, int count) {
+    likes[tag] += count;
+}
+
 
 void Cuenta::agregarVerAhora(const string &titulo) {
     cout << "Disfrutando la película: " << titulo << endl;
