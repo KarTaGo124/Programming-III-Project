@@ -27,61 +27,81 @@ void GestorArchivos::cargarCuentas(GestorCuentas &cuentas) {
         ss >> temp >> contrasenia;
 
         // Crear o actualizar cuenta
-        Cuenta *cuenta = cuentas.obtenerCuenta(correo);
-        if (!cuenta) {
-            cuenta = new Cuenta(correo, contrasenia);
+        if (cuentas.obtenerCuenta(correo) == nullptr) {
             cuentas.agregarCuenta(correo, contrasenia);
-        } else {
-            cuenta->setContrasenia(contrasenia);
         }
+    }
+    archivo.close();
+}
 
-        // Leer VerMasTarde
-        string verMasTarde;
-        ss >> verMasTarde;
-        if (verMasTarde.find("VerMasTarde:") == 0) {
-            verMasTarde = verMasTarde.substr(12); // Remover "VerMasTarde:"
-            stringstream ssVerMasTarde(verMasTarde);
-            string id;
-            while (getline(ssVerMasTarde, id, ',')) {
-                if (!id.empty()) {
-                    try {
-                        int idNum = stoi(id);
-                        cuenta->agregarVerMasTarde(idNum);
-                    } catch (const invalid_argument &e) {
-                        cerr << "Error al convertir id '" << id << "' a entero: " << e.what() << endl;
-                    } catch (const out_of_range &e) {
-                        cerr << "Error: id '" << id << "' fuera de rango: " << e.what() << endl;
-                    }
-                }
-            }
-        }
+void GestorArchivos::cargarCuenta(Cuenta &cuenta) {
+    ifstream archivo("../archivos/cuentas.txt");
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo." << endl;
+        return;
+    }
 
-        // Leer Likes
-        string likes;
-        ss >> likes;
-        if (likes.find("Likes:") == 0) {
-            likes = likes.substr(6); // Remover "Likes:"
-            stringstream ssLikes(likes);
-            string like;
-            while (getline(ssLikes, like, ',')) {
-                if (!like.empty()) {
-                    size_t sep = like.rfind(':'); // Buscar el último ':'
-                    if (sep != string::npos) {
-                        string tag = like.substr(0, sep);
-                        string countStr = like.substr(sep + 1);
+    string linea;
+    while (getline(archivo, linea)) {
+        stringstream ss(linea);
+        string temp, correo, contrasenia;
+
+        // Leer correo
+        ss >> temp >> correo;
+        // Leer contraseña
+        ss >> temp >> contrasenia;
+
+        if (correo == cuenta.getCorreo() && contrasenia == cuenta.getContrasenia()) {
+
+            // Leer VerMasTarde
+            string verMasTarde;
+            ss >> verMasTarde;
+            if (verMasTarde.find("VerMasTarde:") == 0) {
+                verMasTarde = verMasTarde.substr(12); // Remover "VerMasTarde:"
+                stringstream ssVerMasTarde(verMasTarde);
+                string id;
+                while (getline(ssVerMasTarde, id, ',')) {
+                    if (!id.empty()) {
                         try {
-                            int count = stoi(countStr);
-                            cuenta->getLikes()[tag] += count; // Acumular likes en lugar de sobrescribir
+                            int idNum = stoi(id);
+                            cuenta.agregarVerMasTarde(idNum);
                         } catch (const invalid_argument &e) {
-                            cerr << "Error al convertir count '" << countStr << "' a entero: " << e.what() << endl;
+                            cerr << "Error al convertir id '" << id << "' a entero: " << e.what() << endl;
                         } catch (const out_of_range &e) {
-                            cerr << "Error: count '" << countStr << "' fuera de rango: " << e.what() << endl;
+                            cerr << "Error: id '" << id << "' fuera de rango: " << e.what() << endl;
                         }
-                    } else {
-                        cerr << "Formato inválido de like: " << like << endl;
                     }
                 }
             }
+
+            // Leer Likes
+            string likes;
+            ss >> likes;
+            if (likes.find("Likes:") == 0) {
+                likes = likes.substr(6); // Remover "Likes:"
+                stringstream ssLikes(likes);
+                string like;
+                while (getline(ssLikes, like, ',')) {
+                    if (!like.empty()) {
+                        size_t sep = like.rfind(':'); // Buscar el último ':'
+                        if (sep != string::npos) {
+                            string tag = like.substr(0, sep);
+                            string countStr = like.substr(sep + 1);
+                            try {
+                                int count = stoi(countStr);
+                                cuenta.getLikes()[tag] += count; // Acumular likes en lugar de sobrescribir
+                            } catch (const invalid_argument &e) {
+                                cerr << "Error al convertir count '" << countStr << "' a entero: " << e.what() << endl;
+                            } catch (const out_of_range &e) {
+                                cerr << "Error: count '" << countStr << "' fuera de rango: " << e.what() << endl;
+                            }
+                        } else {
+                            cerr << "Formato inválido de like: " << like << endl;
+                        }
+                    }
+                }
+            }
+            break; // Encontramos la cuenta, podemos salir del bucle
         }
     }
     archivo.close();

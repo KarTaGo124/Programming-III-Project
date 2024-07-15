@@ -18,6 +18,7 @@ public:
     }
 
     void cargarCuentas(GestorCuentas &cuentas);
+    void cargarCuenta(Cuenta &cuenta);
     void guardarCuenta(Cuenta &cuenta);
 };
 

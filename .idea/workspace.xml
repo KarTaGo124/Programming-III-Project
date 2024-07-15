@@ -20,16 +20,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32b27aa9-6738-4b3f-b710-fcf9f513b90d" name="Changes" comment="gestor de cuentas y streaming">
+    <list default="true" id="32b27aa9-6738-4b3f-b710-fcf9f513b90d" name="Changes" comment="si se guarda en el txt pero no lo lee">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/archivos/cuentas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/cuentas.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gestor_archivos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestor_archivos.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gestor_archivos.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestor_archivos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/cuenta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/cuenta.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/cuenta.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/cuenta.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/streaming.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/streaming.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +142,7 @@
       <workItem from="1720971659234" duration="15494000" />
       <workItem from="1721003993355" duration="2951000" />
       <workItem from="1721020751743" duration="1549000" />
-      <workItem from="1721024892619" duration="7649000" />
+      <workItem from="1721024892619" duration="8648000" />
     </task>
     <task id="LOCAL-00001" summary="clear">
       <option name="closed" value="true" />
@@ -180,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720986506048</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="si se guarda en el txt pero no lo lee">
+      <option name="closed" value="true" />
+      <created>1721036141542</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721036141542</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +200,7 @@
     <MESSAGE value="clear" />
     <MESSAGE value="merge" />
     <MESSAGE value="gestor de cuentas y streaming" />
-    <option name="LAST_COMMIT_MESSAGE" value="gestor de cuentas y streaming" />
+    <MESSAGE value="si se guarda en el txt pero no lo lee" />
+    <option name="LAST_COMMIT_MESSAGE" value="si se guarda en el txt pero no lo lee" />
   </component>
 </project>

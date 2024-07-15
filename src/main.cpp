@@ -29,11 +29,15 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
                 cout << "Ingrese la contraseña: ";
                 cin >> contrasenia;
 
-                if (cuentas.agregarCuenta(correo, contrasenia)) {
-                    cuenta = cuentas.obtenerCuenta(correo);
-                    proxy.agregarCuenta(cuenta);
-                    GestorArchivos::obtenerInstancia()->guardarCuenta(*cuenta); // Guardar la nueva cuenta
-                    cout << "Registro exitoso.\n";
+                if (cuentas.obtenerCuenta(correo) == nullptr) {
+                    if (cuentas.agregarCuenta(correo, contrasenia)) {
+                        cuenta = cuentas.obtenerCuenta(correo);
+                        proxy.agregarCuenta(cuenta);
+                        GestorArchivos::obtenerInstancia()->guardarCuenta(*cuenta); // Guardar la nueva cuenta
+                        cout << "Registro exitoso.\n";
+                    } else {
+                        cout << "Error: No se pudo registrar la cuenta.\n";
+                    }
                 } else {
                     cout << "Error: El correo ya está registrado.\n";
                 }
@@ -48,6 +52,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
 
                 if (proxy.autenticar(correo, contrasenia)) {
                     cuenta = cuentas.obtenerCuenta(correo);
+                    GestorArchivos::obtenerInstancia()->cargarCuenta(*cuenta); // Cargar datos de la cuenta
                     autenticacionExitosa = true;
                 } else {
                     cout << "Error: Credenciales incorrectas.\n";
@@ -70,7 +75,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
 
 int main() {
     GestorCuentas *cuentas = GestorCuentas::obtenerInstancia();
-    GestorArchivos::obtenerInstancia()->cargarCuentas(*cuentas);
+    GestorArchivos::obtenerInstancia()->cargarCuentas(*cuentas); // Cargar todas las cuentas al inicio
     ProxyAutenticacion proxy;
     const auto &todasLasCuentas = cuentas->obtenerTodasLasCuentas();
     for (const auto &pair : todasLasCuentas) {
