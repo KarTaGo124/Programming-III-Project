@@ -31,6 +31,9 @@ Este programa está diseñado para gestionar un sistema de streaming que permite
 
 ## Estructura del proyecto
 
+### credenciales.cpp
+Define las clases **AutenticacionReal** que se encarga de la autenticación de usuarios utilizando un mapa de usuarios y contraseñas, mientras que la clase **ProxyAutenticacion** actúa como intermediario para la autenticación, añadiendo una capa de seguridad y control adicional.
+
 ### pelicula.cpp
 Define la clase **Pelicula** que representa una película con atributos como ID, título, sinopsis y categorías. Proporciona métodos para leer películas desde un archivo CSV y contar las palabras en el título y la sinopsis.
 
@@ -74,4 +77,4 @@ Interactuar con el menú del sistema para buscar, ver y gestionar películas.
 El sistema carga inicialmente las películas desde un archivo CSV y permite al usuario buscar películas por nombre o categoría, ver recomendaciones, y gestionar sus listas de "ver más tarde" y "me gusta".
 
 ## Conclusión
-Este sistema de streaming combina múltiples conceptos de estructuras de datos, patrones de diseño, y algoritmos de búsqueda para proporcionar una experiencia eficiente y amigable para el usuario.
+En conclusión, el desarrollo de esta plataforma de streaming ha sido un ejercicio integral que nos ha permitido aplicar y consolidar múltiples conceptos de estructuras de datos, patrones de diseño, y algoritmos de búsqueda, con el propósito de proporcionar una experiencia eficiente y amigable para el usuario.
