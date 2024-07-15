@@ -21,7 +21,6 @@ void clearTerminal();
 
 int printMenu();
 
-
 template<typename T1, typename T2>
 vector<pair<T1, T2>> sorted(const unordered_map<T1, T2> &containerIn) {
     vector<pair<T1, T2>> containerOut(containerIn.begin(), containerIn.end());

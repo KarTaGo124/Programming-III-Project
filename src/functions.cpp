@@ -1,9 +1,7 @@
-// functions.cpp
 #include "functions.h"
-
 #include <cctype>
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <unordered_map>
 #include <unordered_set>
 #include <sstream>
 #include <algorithm>
@@ -20,7 +18,7 @@ string toLower(const string &str) {
 
 string normalizarTxt(string str) {
     unordered_map<char, char> mapNormalizado = {
-            //Usar caracteres Unicode para reconocer caracteres especiales como char
+            // Usar caracteres Unicode para reconocer caracteres especiales como char
             {'\xE1', 'a'},
             {'\xE9', 'e'},
             {'\xED', 'i'},
@@ -37,7 +35,7 @@ string normalizarTxt(string str) {
 
     string txtNormalizado;
 
-    for (char c: str) {
+    for (char c : str) {
         if (mapNormalizado.find(c) != mapNormalizado.end()) {
             txtNormalizado += mapNormalizado[c];
         } else if (isalnum(c) || isspace(c)) {
@@ -61,23 +59,13 @@ unordered_set<string> convertSet(const string &txt) {
     return result;
 }
 
-/*
-string printContainer(unordered_set<string> container) {
-    string txt;
-    int sz = container.size() - 1;
-    for (auto it = container.begin(); it != container.end(); it++) {
-        txt += to_string(*it);
-        if (sz != 0) {
-            txt += ", ";
-            sz--;
-        }
-    }
-    return txt;
-}
-*/
-void clearTerminal(){
+void clearTerminal() {
     usleep(500000);
-    system("clear||cls");
+#if defined(_WIN32) || defined(_WIN64)
+    system("cls");
+#else
+    system("clear");
+#endif
 }
 
 bool ifExist(const unordered_set<int> &ids, int id, int limit) {
@@ -95,14 +83,11 @@ int printMenu() {
         cout << "2. Buscar por categoría " << endl;
         cout << "3. Explorar mi lista de películas y series " << endl;
         cout << "4. Explorar mi lista de recomendados" << endl;
+        cout << "5. Cerrar sesión" << endl;
         cout << "Elegir entre las opciones: ";
         cin >> opcion;
         cin.ignore();
-    } while (opcion < 1 || opcion > 4);
+    } while (opcion < 1 || opcion > 5);
 
     return opcion;
 }
-
-
-
-
