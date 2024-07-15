@@ -108,19 +108,14 @@
     <configuration name="Proyecto-Progra-3" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="src" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Proyecto-Progra-3" TARGET_NAME="src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Proyecto-Progra-3" RUN_TARGET_NAME="src">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.src" />
       <item itemvalue="CMake Debug.Proyecto-Progra-3" />
+      <item itemvalue="CMake Application.src" />
     </list>
     <recent_temporary>
       <list>
@@ -143,6 +138,7 @@
       <workItem from="1721003993355" duration="2951000" />
       <workItem from="1721020751743" duration="1549000" />
       <workItem from="1721024892619" duration="8648000" />
+      <workItem from="1721074369639" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="clear">
       <option name="closed" value="true" />

@@ -111,7 +111,7 @@ public:
 
     void printEncontrados(const vector<pair<int, int>> &idEncontrados, int limit) {
         for (int i = 0; i < limit && i < idEncontrados.size(); i++) {
-            cout << "ID: " << idEncontrados[i].first << " - " << "Título: " << peliculas.at(idEncontrados[i].first).getTitulo() << endl;
+            cout << "ID: " << idEncontrados[i].first << " - " << "Titulo: " << peliculas.at(idEncontrados[i].first).getTitulo() << endl;
         }
         cout << "--------------------------------" << endl;
     }
@@ -147,7 +147,7 @@ public:
     int obtenerOpcionUsuario(int min, int max) {
         int opcion;
         while (!(cin >> opcion) || opcion < min || opcion > max) {
-            cout << "Opción no válida. Intente nuevamente: ";
+            cout << "Opcion no valida. Intente nuevamente: ";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -158,7 +158,7 @@ public:
     void buscarPorNombre(int &currentId, bool &encontrada, int limit) {
         clearTerminal();
         string subcadena;
-        cout << "Ingrese nombre de serie o película: ";
+        cout << "Ingrese nombre de serie o pelicula: ";
         //cin.ignore(); // Ignorar el carácter residual en el buffer de entrada
         getline(cin, subcadena);
         auto idEncontrados = buscarPorSubcadena(subcadena);
@@ -166,12 +166,12 @@ public:
         while (!encontrada) {
             clearTerminal();
             cout << "--------------------------------" << endl;
-            cout << "Se encontraron " << idEncontrados.size() << " películas para elegir: " << endl;
+            cout << "Se encontraron " << idEncontrados.size() << " peliculas para elegir: " << endl;
             printEncontrados(idEncontrados, limit);
             cout << "1. Seleccionar" << endl;
-            cout << "2. Ver más" << endl;
+            cout << "2. Ver mas" << endl;
             cout << "3. Regresar" << endl;
-            cout << "Elegir opción: ";
+            cout << "Elegir opcion: ";
             int opcion1 = obtenerOpcionUsuario(1, 3);
 
             if (opcion1 == 1) {
@@ -181,14 +181,14 @@ public:
                 }
 
                 int id;
-                cout << "Escoger película por ID: ";
+                cout << "Escoger pelicula por ID: ";
                 cin >> id;
                 if (idLista.find(id) != idLista.end()) {
                     currentId = id;
                     printPelicula(id);
                     encontrada = true;
                 } else {
-                    cout << "Película no se encuentra entre las mostradas" << endl;
+                    cout << "Pelicula no se encuentra entre las mostradas" << endl;
                 }
             } else if (opcion1 == 2) {
                 limit += 5;
@@ -204,9 +204,9 @@ public:
             cout << "--------------------------------" << endl;
             printTags(limit);
             cout << "1. Seleccionar" << endl;
-            cout << "2. Ver más" << endl;
+            cout << "2. Ver mas" << endl;
             cout << "3. Regresar" << endl;
-            cout << "Elegir opción: ";
+            cout << "Elegir opcion: ";
             int opcion2 = obtenerOpcionUsuario(1, 3);
 
             if (opcion2 == 1) {
@@ -220,17 +220,17 @@ public:
                 while (true) {
                     clearTerminal();
                     cout << "--------------------------------" << endl;
-                    cout << "Se encontraron " << idEncontrados.size() << " películas para elegir: " << endl;
+                    cout << "Se encontraron " << idEncontrados.size() << " peliculas para elegir: " << endl;
                     printTitulo(idEncontrados, limit);
                     cout << "1. Seleccionar" << endl;
-                    cout << "2. Ver más" << endl;
+                    cout << "2. Ver mas" << endl;
                     cout << "3. Regresar" << endl;
-                    cout << "Elegir opción: ";
+                    cout << "Elegir opcion: ";
                     int opcion3 = obtenerOpcionUsuario(1, 3);
 
                     if (opcion3 == 1) {
                         int id;
-                        cout << "Escoger película por ID: ";
+                        cout << "Escoger pelicula por ID: ";
                         cin >> id;
                         if (ifExist(idEncontrados, id, limit)) {
                             currentId = id;
@@ -238,7 +238,7 @@ public:
                             encontrada = true;
                             break;
                         } else {
-                            cout << "Película no se encuentra entre las mostradas" << endl;
+                            cout << "Pelicula no se encuentra entre las mostradas" << endl;
                         }
                     } else if (opcion3 == 2) {
                         limit += 5;
@@ -258,28 +258,28 @@ public:
         while (!encontrada) {
             clearTerminal();
             if (verMasTarde.empty()) {
-                cout << "No tienes películas en la lista de ver más tarde." << endl;
+                cout << "No tienes peliculas en la lista de ver mas tarde." << endl;
                 return;
             }
             cout << "--------------------------------" << endl;
             cout << "Continuar viendo: " << endl;
             printTitulo(verMasTarde, limit);
             cout << "1. Seleccionar" << endl;
-            cout << "2. Ver más" << endl;
+            cout << "2. Ver mas" << endl;
             cout << "3. Regresar" << endl;
-            cout << "Elegir opción: ";
+            cout << "Elegir opcion: ";
             int opcion4 = obtenerOpcionUsuario(1, 3);
 
             if (opcion4 == 1) {
                 int id;
-                cout << "Escoger película por ID: ";
+                cout << "Escoger pelicula por ID: ";
                 cin >> id;
                 if (ifExist(verMasTarde, id, limit)) {
                     currentId = id;
                     printPelicula(id);
                     encontrada = true;
                 } else {
-                    cout << "Película no se encuentra entre las mostradas" << endl;
+                    cout << "Pelicula no se encuentra entre las mostradas" << endl;
                 }
             } else if (opcion4 == 2) {
                 limit += 5;
@@ -293,7 +293,7 @@ public:
         while (!encontrada) {
             clearTerminal();
             if (likesMap.empty()) {
-                cout << "No tienes películas recomendadas aún." << endl;
+                cout << "No tienes peliculas recomendadas aun." << endl;
                 return;
             }
             cout << "--------------------------------" << endl;
@@ -302,21 +302,21 @@ public:
             auto lista = buscarPorCategoria(tagsLikes[0].first);
             printTitulo(lista, limit);
             cout << "1. Seleccionar" << endl;
-            cout << "2. Ver más" << endl;
+            cout << "2. Ver mas" << endl;
             cout << "3. Regresar" << endl;
-            cout << "Elegir opción: ";
+            cout << "Elegir opcion: ";
             int opcion5 = obtenerOpcionUsuario(1, 3);
 
             if (opcion5 == 1) {
                 int id;
-                cout << "Escoger película por ID: ";
+                cout << "Escoger pelicula por ID: ";
                 cin >> id;
                 if (ifExist(lista, id, limit)) {
                     currentId = id;
                     printPelicula(id);
                     encontrada = true;
                 } else {
-                    cout << "Película no se encuentra entre las mostradas" << endl;
+                    cout << "Pelicula no se encuentra entre las mostradas" << endl;
                 }
             } else if (opcion5 == 2) {
                 limit += 5;
@@ -330,10 +330,10 @@ public:
         bool volver = false;
         while (!volver) {
             cout << "1. Me gusta" << endl;
-            cout << "2. Ver más tarde" << endl;
+            cout << "2. Ver mas tarde" << endl;
             cout << "3. Ver ahora" << endl;
             cout << "4. Regresar" << endl;
-            cout << "Elegir opción: ";
+            cout << "Elegir opcion: ";
             int opcion6 = obtenerOpcionUsuario(1, 4);
 
             if (opcion6 == 1) {
@@ -357,7 +357,7 @@ public:
             cout << "1. Me gusta" << endl;
             cout << "2. Ver ahora" << endl;
             cout << "3. Regresar" << endl;
-            cout << "Elegir opción: ";
+            cout << "Elegir opcion: ";
             int opcion6 = obtenerOpcionUsuario(1, 3);
 
             if (opcion6 == 1) {
@@ -409,7 +409,7 @@ public:
                     break;
                 case 5:
                     clearTerminal();
-                    cout << "Cerrando sesión..." << endl;
+                    cout << "Cerrando sesion..." << endl;
 
                     // Guardar la cuenta actual antes de salir
                     gestorArchivos->guardarCuenta(*cuenta);

@@ -6,10 +6,10 @@ using namespace std;
 bool AutenticacionReal::autenticar(const string &correo, const string &contrasenia) const {
     auto it = usuarios.find(correo);
     if (it != usuarios.end() && it->second == contrasenia) {
-        cout << "Autenticación exitosa para: " << correo << endl;
+        cout << "Autenticacion exitosa para: " << correo << endl;
         return true;
     }
-    cout << "Autenticación fallida para: " << correo << endl;
+    cout << "Autenticacion fallida para: " << correo << endl;
     return false;
 }
 

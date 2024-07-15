@@ -96,7 +96,7 @@ void GestorArchivos::cargarCuenta(Cuenta &cuenta) {
                                 cerr << "Error: count '" << countStr << "' fuera de rango: " << e.what() << endl;
                             }
                         } else {
-                            cerr << "Formato inválido de like: " << like << endl;
+                            cerr << "Formato invalido de like: " << like << endl;
                         }
                     }
                 }

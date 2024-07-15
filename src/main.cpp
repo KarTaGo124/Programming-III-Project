@@ -13,9 +13,9 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
 
     while (!autenticacionExitosa) {
         cout << "1. Registrarse\n";
-        cout << "2. Iniciar sesión\n";
+        cout << "2. Iniciar sesion\n";
         cout << "3. Salir\n";
-        cout << "Elija una opción: ";
+        cout << "Elija una opcion: ";
 
         int opcion;
         cin >> opcion;
@@ -26,7 +26,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
                 string correo, contrasenia;
                 cout << "Ingrese el correo: ";
                 cin >> correo;
-                cout << "Ingrese la contraseña: ";
+                cout << "Ingrese la contrasena: ";
                 cin >> contrasenia;
 
                 if (cuentas.obtenerCuenta(correo) == nullptr) {
@@ -39,7 +39,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
                         cout << "Error: No se pudo registrar la cuenta.\n";
                     }
                 } else {
-                    cout << "Error: El correo ya está registrado.\n";
+                    cout << "Error: El correo ya esta registrado.\n";
                 }
                 break;
             }
@@ -47,7 +47,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
                 string correo, contrasenia;
                 cout << "Ingrese el correo: ";
                 cin >> correo;
-                cout << "Ingrese la contraseña: ";
+                cout << "Ingrese la contrasena: ";
                 cin >> contrasenia;
 
                 if (proxy.autenticar(correo, contrasenia)) {
@@ -62,7 +62,7 @@ void menu(GestorCuentas &cuentas, ProxyAutenticacion &proxy) {
             case 3:
                 return;
             default:
-                cout << "Opción inválida. Por favor, elija una opción válida. " << endl;
+                cout << "Opcion invalida. Por favor, elija una opcion valida. " << endl;
         }
     }
 

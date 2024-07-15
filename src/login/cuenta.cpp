@@ -45,5 +45,5 @@ void Cuenta::agregarLike(const string &tag, int count) {
 
 
 void Cuenta::agregarVerAhora(const string &titulo) {
-    cout << "Disfrutando la película: " << titulo << endl;
+    cout << "Disfrutando la pelicula: " << titulo << endl;
 }
