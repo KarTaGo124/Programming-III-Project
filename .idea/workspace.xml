@@ -20,13 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32b27aa9-6738-4b3f-b710-fcf9f513b90d" name="Changes" comment="si se guarda en el txt pero no lo lee">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivos/cuentas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/cuentas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gestor_archivos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestor_archivos.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gestor_archivos.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestor_archivos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="32b27aa9-6738-4b3f-b710-fcf9f513b90d" name="Changes" comment="si se guarda en el txt pero no lo lee" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +99,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.src">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Proyecto-Progra-3" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -114,8 +113,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Debug.Proyecto-Progra-3" />
       <item itemvalue="CMake Application.src" />
+      <item itemvalue="CMake Debug.Proyecto-Progra-3" />
     </list>
     <recent_temporary>
       <list>
@@ -138,7 +137,7 @@
       <workItem from="1721003993355" duration="2951000" />
       <workItem from="1721020751743" duration="1549000" />
       <workItem from="1721024892619" duration="8648000" />
-      <workItem from="1721074369639" duration="3000" />
+      <workItem from="1721074369639" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="clear">
       <option name="closed" value="true" />
@@ -187,10 +186,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VCPKGProject">
-    <isAutomaticEditVcpkgJson value="true" />
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
-    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="clear" />

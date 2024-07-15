@@ -80,10 +80,10 @@ int printMenu() {
     int opcion;
     do {
         cout << "1. Buscar por nombre " << endl;
-        cout << "2. Buscar por categoría " << endl;
-        cout << "3. Explorar mi lista de películas y series " << endl;
+        cout << "2. Buscar por categoria " << endl;
+        cout << "3. Explorar mi lista de peliculas y series " << endl;
         cout << "4. Explorar mi lista de recomendados" << endl;
-        cout << "5. Cerrar sesión" << endl;
+        cout << "5. Cerrar sesion" << endl;
         cout << "Elegir entre las opciones: ";
         cin >> opcion;
         cin.ignore();
