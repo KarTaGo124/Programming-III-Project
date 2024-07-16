@@ -6,8 +6,6 @@
 * Leonardo Alfredo Montoya Solórzano
 * Samuel Aaron Saquiray Delgado
 
-El siguiente texto debe ser eliminar en su repositorio.
-
 ## Plataforma de Streaming
 El objetivo del proyecto final es implementar una plataforma de *streaming*. Un programa que administre la búsqueda y visualización de la sinopsis de películas. Para ello se debe implementar las siguientes operaciones:
 
