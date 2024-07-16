@@ -76,5 +76,12 @@ Ejecutar el programa principal.
 Interactuar con el menú del sistema para buscar, ver y gestionar películas.
 El sistema carga inicialmente las películas desde un archivo CSV y permite al usuario buscar películas por nombre o categoría, ver recomendaciones, y gestionar sus listas de "ver más tarde" y "me gusta".
 
+## Descripción gráfica(frontend)
+se crean dos carpetas ,una para manejar las peticiones que hara el frontend hacia nuestro proyecto principal y otra para ejecutar el frontend(para ejecutar el frontend es necesario tener node instalado).
+para la parte de manejar las peticiones en c++ se usa una libreria llamada httplib.h que nos brinda soporte para esto.
+esta constaria de crear api's para el registro de un nuevo usuario , el inicio de sesion de un usuario existente,busqueda de pelicula por nombre y por categoria,otra para añadir a la lista de ver mas tarde y la ultima para darle me gusta a las peliculas.
+para la interacion con el usuario decidimos usar react ya que al ser una plataforma de streaming es mas factible usarlo ya que este trabaja con modulos(componentes) y asi trabajar de una manera mas ordenada.
+una vez iniciado la sesion,este te mostrara un cuadro de busqueda que llamara a la api respectiva pasandole el parametro y esta solicitando un json para recibir los datos de las peliculas encontradas,estas ultimas contaran con dos botones de ver mas tarde y de like,estos ultimos llamaran a sus apis respectivas.
+
 ## Conclusión
 En conclusión, el desarrollo de esta plataforma de streaming ha sido un ejercicio integral que nos ha permitido aplicar y consolidar múltiples conceptos de estructuras de datos, patrones de diseño, y algoritmos de búsqueda, con el propósito de proporcionar una experiencia eficiente y amigable para el usuario.
